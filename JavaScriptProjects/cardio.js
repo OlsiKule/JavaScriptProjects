@@ -15,13 +15,16 @@ console.log(addClass)
 
 const playerCard = document.querySelector(".string")
 function generatePlayerCard(name, age, height) {
+    const heightInIches = height / 2.54
     playerCard.innerHTML = `
 <div class="playerCard">
-    <h2>Name - Age </h2>
-    <p>They are ${height} and ${age} years old. In dog years this person would be ${height}. That would be a tall dog!</p>
+    <h2>${name} - ${age} </h2>
+    <p>They are ${heightInIches } and ${age} years old. In dog years this person would be ${age * 7}. That would be a tall dog!</p>
 </div>
     `
+
 }
-generatePlayerCard()
+generatePlayerCard("dogo", 5, 139)
 // console.log(generatePlayerCard())
 
+  
