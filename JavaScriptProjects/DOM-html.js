@@ -31,7 +31,7 @@ heading.textContent = "This is the chosen div"
 console.log(heading.textContent);
 
 
-// textContent vs innerText
+// textContent vs innerText  
 // textContent shows everything ie. all selected including elements and styles 
 // innerText only shows readable text and is aware of styles and script (maybe inner stands for "what's inside")
 console.log(heading.textContent);
