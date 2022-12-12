@@ -48,15 +48,18 @@
 // // this is another method with two argumnt
 // pizzaList.insertAdjacentText("afterbegin", "🍕")
 
-//classes 
+//classes : allows to add class to an element 
 const pic = document.querySelector(".cool")
 console.log(pic.classList);
 pic.classList.replace("nice", "awesome")
+pic.classList.add("beauty")
 
+// the toggle method adds/removes a class from an element  
 function toggleRound(){
     pic.classList.toggle("round");
 }
  
+// wanted to try diff events beside the popular "click" 
 pic.addEventListener("mouseover",  toggleRound); 
 pic.addEventListener("mouseout",  toggleRound); 
 
