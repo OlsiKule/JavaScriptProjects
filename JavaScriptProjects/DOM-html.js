@@ -64,18 +64,18 @@ pic.addEventListener("mouseover",  toggleRound);
 pic.addEventListener("mouseout",  toggleRound); 
 
 
-// attibutes: anything that's added to an element like classes, src 
+// attibutes: anything that's added to an element like class, src, alt  
 // adding a new attribute
 pic.alt = "cute picture of whatever it is" //setter : this is changing smth 
 console.log(pic.alt) //getter : this is displaying smth on the page 
 // all of the attributes are done through getters and setters. Use the (.) notation eg pic.alt  pic.naturalWidth
 
 pic.setAttribute("alt", "very awesome picture")
-// pic.alt vs pic.setAttribute : the diff rests in that with the setAttr we can set the standart attri names like img, class, alt etc to anything we want eg. 
+// pic.alt vs pic.setAttribute : the diff is that with the setAttr we can set the standard attri names like img, class, alt etc to anything we want eg. 
 pic.setAttribute("new-attribute-name", "this picture has a customized attribute name")
 // it's highly recommended not to use made up names for attributes but if you have to do that use : data-(whatever name goes here) eg. data-name or data-property
 
-// dataset: this allows as to access the made up attributes. It seems to look at the first custom class from the list. To access another one in line could use a different class name 
+// dataset: this allows us to access the made up attributes. It seems to look at the first custom class from the list. To access another one in line could use a different class name 
 const custom = document.querySelector(".custom")
 console.log(custom.dataset)
 
