@@ -1,4 +1,4 @@
-// console.log("this better work")
+console.log("this better work")
 // in this lesson we're creating html elements 
 const paragraph = document.createElement('p');
 // the text doesn't show on firefox but it does on chrome
