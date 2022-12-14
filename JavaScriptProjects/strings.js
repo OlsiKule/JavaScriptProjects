@@ -11,13 +11,22 @@ const myHTML = `
     <img src="${src}" alt="${description}" />
 </div>
 `
-// the above const is a string see console.log below
-console.log(typeof myHTML)
-// b/c myHTML is a string we can't add classList 
-// to change elements in myHTML dynamically we have to first put it in the DOM and then ...
 
-item.innerHTML = myHTML 
-const itemImage = document.querySelector(".wrapper img")
+// // the above const is a string see console.log below
+// console.log(typeof myHTML)
+// // b/c myHTML is a string we can't add classList or eventListener etc  
+// // to change elements in myHTML dynamically we have to first put it in the DOM and then ...
 
-itemImage.classList.add("round")
-console.log(itemImage) 
+// item.innerHTML = myHTML 
+// const itemImage = document.querySelector(".wrapper img")
+
+// itemImage.classList.add("round")
+// console.log(itemImage) 
+
+// turn a string into a DOM element 
+const myFragment = document.createRange().createContextualFragment(myHTML)
+// a range is a collection of elements 
+// with the range and contextual fragment we're able to select elements that were previously just strings 
+console.log(myFragment.querySelector("img"))
+// to display on the page we can use appendChild method
+document.body.appendChild(myFragment)
