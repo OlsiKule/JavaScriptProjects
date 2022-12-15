@@ -87,14 +87,14 @@ function generatePlayerCard(name, age, height) {
 // make a new div with a class of cards
 const cards = document.createElement('div');
 cards.classList.add('cards');
-console.log(cards);
+// console.log(cards);
 // make 4 player cards using generatePlayerCard
 let cardsHTML = generatePlayerCard('rosie', 12, 150);
-cardsHTML = cardsHTML + generatePlayerCard('scott', 12, 150);
-cardsHTML = cardsHTML + generatePlayerCard('kate', 12, 150);
-cardsHTML = cardsHTML + generatePlayerCard('fluff', 12, 150);
-console.log(cardsHTML);
+cardsHTML += generatePlayerCard('scott', 12, 150);
+cardsHTML += generatePlayerCard('kate', 12, 150);
+cardsHTML += generatePlayerCard('fluffy', 12, 150);
 cards.innerHTML = cardsHTML;
+console.log(cardsHTML);
 // append those cards to the div
 div.insertAdjacentElement('beforebegin', cards);
 // put the div into the DOM just before the wrapper element
