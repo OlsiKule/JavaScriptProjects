@@ -32,6 +32,7 @@ coolButton.addEventListener("click", hooray)
 // (usually this selector goes at the top)
 const buyButtons = document.querySelectorAll(".buy");
 
+/*
 function buyItem(){
     console.log("buying Item ")
 }
@@ -46,6 +47,53 @@ buyButtons.forEach(function(buyButton){
     console.log("binding the buy button ")
     buyButton.addEventListener("click", buyItem )
 })
+*/
 
 
 
+//  target, bubling and propagation 
+// this event is a parameter which can also be called e
+function handleBuyButtonClick(event){
+    console.log("you're about to buy it")
+    // this is a string 
+    // console.log(event.target.dataset.price)
+    // parseFlaatInt doesn't keep the decimal
+    console.log(parseFloat(event.target.dataset.price))
+
+//  another example is to access data :
+console.log("you clicked a button")
+const button = event.target;
+console.log(button.textContent)
+
+// the event.target got clicked 
+console.log(event.target)
+// the event.currentTarget fired the event listener
+// in most cases we use currentTarget
+console.log(event.currentTarget)
+// stop this event for bubbling up (see propagation)
+// event.stopPropagation();
+}
+// how do we know what button is clicked ? 
+// that info is in the event object ie. the parameter (event)
+buyButtons.forEach(function(buyButton){
+    buyButton.addEventListener("click", handleBuyButtonClick)
+})
+// mouse, click, touches are all consolidated into a pointer event 
+
+
+// Propagation
+// the event registers on many nodes, it bubbles up to the parent element and so on up to the window or browser 
+// we prevent that with stop propagation event so it focuses on a small area 
+window.addEventListener("click", function(event){
+    console.log("You Clicked the Window")
+    console.log(event.target)
+}, {capture: true})
+
+
+// this keyword
+const photoEl = document.querySelector(".photo")
+
+photoEl.addEventListener("mousemove", function(e){
+    console.log(e.currentTarget)
+    console.count(e.currentTarget)
+})
