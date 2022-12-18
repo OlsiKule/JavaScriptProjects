@@ -52,7 +52,7 @@ buyButtons.forEach(function(buyButton){
 
 
 //  target, bubling and propagation 
-// this event is a parameter which can also be called e
+//  event is a parameter which can also be called e
 function handleBuyButtonClick(event){
     console.log("you're about to buy it")
     // this is a string 
@@ -61,20 +61,20 @@ function handleBuyButtonClick(event){
     console.log(parseFloat(event.target.dataset.price))
 
 //  another example is to access data :
-console.log("you clicked a button")
-const button = event.target;
-console.log(button.textContent)
+// console.log("you clicked a button")
+// const button = event.target;
+// console.log(button.textContent)
 
 // the event.target got clicked 
 console.log(event.target)
 // the event.currentTarget fired the event listener
-// in most cases we use currentTarget
+// in most cases we use .currentTarget
 console.log(event.currentTarget)
 // stop this event for bubbling up (see propagation)
-// event.stopPropagation();
+event.stopPropagation();
 }
-// how do we know what button is clicked ? 
-// that info is in the event object ie. the parameter (event)
+// // how do we know what button is clicked ? 
+// // that info is in the event object ie. the parameter (event)
 buyButtons.forEach(function(buyButton){
     buyButton.addEventListener("click", handleBuyButtonClick)
 })
@@ -84,19 +84,19 @@ buyButtons.forEach(function(buyButton){
 // Propagation
 // the event registers on many nodes, it bubbles up to the parent element and so on up to the window or browser 
 // we prevent that with stop propagation event so it focuses on a small area 
-window.addEventListener("click", function(event){
+ window.addEventListener("click", function(event){
     console.log("You Clicked the Window")
     console.log(event.target)
 }, {capture: true})
 
 
-// this keyword
+// "this" keyword
 const photoEl = document.querySelector(".photo")
 
-photoEl.addEventListener("mousemove", function(e){
+photoEl.addEventListener("mouseover", function(e){
     console.log(e.currentTarget)
     // "this" keywords it's always equal to whatever is before the dot (.)addEventListener 
     // this keyword does not work with arrow fxns 
-    console.count(this)
+    // console.count(this)
 })
 
