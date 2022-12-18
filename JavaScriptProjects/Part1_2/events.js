@@ -95,5 +95,8 @@ const photoEl = document.querySelector(".photo")
 
 photoEl.addEventListener("mousemove", function(e){
     console.log(e.currentTarget)
-    console.count(e.currentTarget)
+    // "this" keywords it's always equal to whatever is before the dot (.)addEventListener 
+    // this keyword does not work with arrow fxns 
+    console.count(this)
 })
+
