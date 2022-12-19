@@ -19,7 +19,7 @@ signupForm.addEventListener('submit', function (event) {
   // console.log(event.currentTarget.email.value)
   // console.log(event.currentTarget.agree.checked)
   const name = event.currentTarget.name.value;
-    // includes is not case sensitive othewise use regex
+    // includes is not case sensitive othewise use regex 
   if (name.includes('chad')) {
     alert(
       "sorry bro, your name does not qualify for the best possible present there's"
