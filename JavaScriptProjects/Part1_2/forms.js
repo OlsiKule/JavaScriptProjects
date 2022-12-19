@@ -14,12 +14,12 @@ wes.addEventListener('click', function (event) {
 const signupForm = document.querySelector('[name="signup"]');
 // now we listen for a submit event
 signupForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+  event.preventDefault();
   // to grab elements inside a form we can do the following console.logs targeting the ID
   console.log(event.currentTarget.name.value);
   console.log(event.currentTarget.email.value);
   console.log(event.currentTarget.agree.checked);
-//   const name = event.currentTarget.name.value;
+  //   const name = event.currentTarget.name.value;
   // includes is not case sensitive othewise use regex
   if (name.includes('chad')) {
     alert(
@@ -31,7 +31,7 @@ signupForm.addEventListener('submit', function (event) {
 
 function logEvent(event) {
   console.log(event.type);
-//   console.log(event.currentTarget.value);
+  //   console.log(event.currentTarget.value);
 }
 signupForm.addEventListener('keyup', logEvent);
 signupForm.addEventListener('keydown', logEvent);
@@ -39,3 +39,14 @@ signupForm.addEventListener('focus', logEvent);
 signupForm.addEventListener('blur', logEvent);
 // other type of events with form imputs
 // keyup, keydown, focus, blur
+
+const photo = document.querySelector('.photo');
+
+function handlePhoto(event) {
+  if (event.type === 'click' || event.key === 'Enter') {
+    console.log('handle this photo');
+  }
+}
+
+photo.addEventListener('click', handlePhoto);
+photo.addEventListener('keydown', handlePhoto);
