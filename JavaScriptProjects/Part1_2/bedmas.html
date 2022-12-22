@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If Statement</title>
+</head>
+<body>
+    <script>
+        // if(10 > 2){
+        //     console.log("yep 1")
+        // } else if (11 > 10){
+        //     console.log("yep 2")
+
+        // } else if (3 > 1 ) {
+        //     console.log("yep 3")
+        // }
+        // // if you want to check if all of them are true individually then we can run three if statmnt
+
+        const age = 30;
+        if (age > 79) {
+            console.log("In your seventies")
+        }
+        else if (age > 60) {
+            console.log("In your sixties")
+        }
+        else if (age > 50) {
+            console.log("In your 50s")
+        }
+        else  {
+            console.log("NOthing was true")
+        }
+
+        function slugify(sentence, lowercase) {
+            if (lowercase) {
+                // here we have a regex : regular expression to change some characters or match  
+                // it starts and closes with /   
+                // we're looking for \s space and we're trying to find all of them, g for global, '-' put this - dash inside 
+                return sentence.replace(/\s/g, '-').toLowerCase(); 
+            } else {
+                // can also be written without the else  
+                return sentence.replace(/\s/g, '-')
+            }
+        }
+
+         const name = "wes"
+         const last = "bos";
+        
+        //  here we're applying BEDMAS where things in brackets must be true as well 
+        if (name === "olsi" || (name === "wes" && last === "bos")) {
+            console.log("cool name")
+        }
+
+        // it has to include all letters of the name 
+        if ("awesome".includes(name)) {
+            console.log("SUPER COOL wicked name")
+        }
+
+        // this fxn can be applied on browser to check if true/false
+        function nameIsAwesome(name) {
+            return "awesome".includes(name)
+        }
+
+        // using it in an if statmnt 
+        if (nameIsAwesome("wes")){
+            console.log("COOL NAME DUDE")
+        }
+    </script>
+</body>
+</html>
