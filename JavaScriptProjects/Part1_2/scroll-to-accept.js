@@ -1,5 +1,5 @@
 const terms = document.querySelector(".terms-and-conditions")
-//intersection obeserver : insert a strong tag 
+//intersection obeserver : insert a strong tag, as soon as user reaches a certain point it sends data to browser 
 // there's also a "new" keyword entered here
 const watch = document.querySelector(".watch")
 const button = document.querySelector(".accept")
@@ -13,6 +13,7 @@ function obCallback(payload){
 }
 // this is a watcher ; as soon as the user reaches a certain point it sends data to browser
 const observer = new IntersectionObserver(obCallback, {
+    // this is what we're watching for (terms)
     root: terms,
     threshold: 0.1, 
 })
@@ -23,7 +24,7 @@ const observer = new IntersectionObserver(obCallback, {
 observer.observe(terms.lastElementChild)
 
 
-// this was the old way of doing things matching the srolltop and scrollHeight to figure out if the user has reached the bottom 
+// below is the old way of doing things matching the srolltop and scrollHeight to figure out if the user has reached the bottom 
 // terms.addEventListener("scroll", function(event){
 //     // to ID the bottom of the scroll use event.currentTarget.scrollTop
 //     console.log(event.currentTarget.scrollTop)
