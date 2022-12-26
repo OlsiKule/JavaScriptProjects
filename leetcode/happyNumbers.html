@@ -9,17 +9,32 @@
 <body>
     
     <script>
+        
         let isHappy = function(n) {
-    // step a) check if number equals 1
-    // if true return "happy number"
-    // if false check if single digit 
+            // step a) check if number = 1
+            if (n === 1){
+                // if true, return "happy number"
+                return ("it's a happy number")
+                // if false check if single digit 
+            } else if (n < 10) {
                 // if single digit square # 
-                    // split into single digits & add sum of squares 
+                return n ** 2
+            } else if (n >= 10) {
+                // split into single digits & add sum of squares 
+               let total=0;
+                for (i = 0; i < n.length; i++)
+                {
+                    total+= parseInt(n[i]**2);
+                    console.log(total)
+                }    
+            }
+
                 // if not single digit split into sigle digits  
                     //  square & add sum of squares 
     // repeat step a)
 };
-    </script>
+
+</script>
 </body>
 </html>
 
