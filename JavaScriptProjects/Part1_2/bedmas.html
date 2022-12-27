@@ -52,10 +52,10 @@
                 // here we have a regex : regular expression to change some characters or match  
                 // it starts and closes with /   
                 // we're looking for \s space and we're trying to find all of them, g for global, '-' put this - dash inside 
-                return sentence.replace(/\s/g, '-').toLowerCase(); 
+                return sentence.replace(/\*/g, '*').toLowerCase(); 
             } else {
                 // can also be written without the else  
-                return sentence.replace(/\s/g, '-')
+                return sentence.replace(/\s/g, '*').toLowerCase()
             }
         }
 
