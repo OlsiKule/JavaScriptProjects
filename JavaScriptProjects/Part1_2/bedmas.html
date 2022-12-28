@@ -116,7 +116,75 @@
 
         console.clear();
 
-        // a bang (!) turns a string into a boolean and two !! turn it to oposite boolean  
+        // a bang (!) turns a string into a boolean and two !! turn it to opposite boolean  
+        // coersion is chaning a type that is not a boolean into a boolean eg. a number or NaN can become boolean with ! or !! in front
+        const isCool = NaN;
+
+        if(!isCool) {
+            console.log("this is not cool")
+        }
+
+        // ternary
+        const count = 3;
+        // let word; 
+        // if (count === 1){
+        //     word = "item";
+        // } else {
+        //     word = "items";
+        // }
+        // the above expression can be written with one line of code with ternary
+            // a ternary consists of three elements;
+            /* 
+                a)condition
+                b)what to do if true 
+                c)what to do if false
+            */
+        
+        const word = count === 1 ? "item" : "items"
+        
+        // const sentence = `You have ${count} ${word} in your cart`
+        // because of its brevity a ternary can be used inside definition eg. 
+        const sentence = `You have ${count} item${count === 1 ? "" : "s"} in your cart`
+        console.log(sentence)
+
+        function showAdminBar(){
+            console.log("showing admin Bar")
+        }
+        const isAdmin = true;
+        // isAdmin ? showAdminBar() : null;
+        // we can use null to show nothing 
+        // the syntax is always ... ? ... : ie. we con't omit the :
+
+        // AND AND trick
+        function check1(){
+            console.log("running check 1")
+            return false;
+        }
+        function check2(){
+            console.log("running check 2")
+            return true;
+        }
+        function check3(){
+            console.log("running check 3")
+            return true;
+        }
+
+        if (check1() && check2() && check3()) {
+            console.log("all checks passed")
+        } else { 
+            console.log("some checks failed ")
+        }
+
+        // instaed of this 
+        // isAdmin ? showAdminBar() : null;
+        // we can do this without having to include null 
+        isAdmin && showAdminBar();
+
+        // we can inlude the conditional in one line and drop the {}
+        if (isAdmin) showAdminBar(); 
+        // however its a good idea to include the { } like this so others don't get confused
+        if (isAdmin) { showAdminBar(); } 
+        
 
     </script>
 </body>
