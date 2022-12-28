@@ -125,7 +125,7 @@
         }
 
         // ternary
-        const count = 3;
+        const count = 1;
         // let word; 
         // if (count === 1){
         //     word = "item";
@@ -140,10 +140,10 @@
                 c)what to do if false
             */
         
-        const word = count === 1 ? "item" : "items"
+        // const word = count === 1 ? "item" : "items"
         
         // const sentence = `You have ${count} ${word} in your cart`
-        // because of its brevity a ternary can be used inside definition eg. 
+        // because of its brevity a ternary can be used inside a definition eg. 
         const sentence = `You have ${count} item${count === 1 ? "" : "s"} in your cart`
         console.log(sentence)
 
@@ -155,7 +155,7 @@
         // we can use null to show nothing 
         // the syntax is always ... ? ... : ie. we con't omit the :
 
-        // AND AND trick
+        // AND AND (&&) trick
         function check1(){
             console.log("running check 1")
             return false;
