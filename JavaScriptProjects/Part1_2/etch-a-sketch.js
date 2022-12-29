@@ -15,9 +15,11 @@ const MOVE_AMOUNT = 20;
 const width = canvas.width;
 const height = canvas.height;
 
+
 // the above can also be done with destructuring
 // const { width, height } = canvas;
 console.log(width, height);
+
 
 // creating a random spot on the canvas
 let x = Math.floor(Math.random() * width);
