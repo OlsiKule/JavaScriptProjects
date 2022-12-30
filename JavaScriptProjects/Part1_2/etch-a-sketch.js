@@ -16,7 +16,7 @@ const width = canvas.width;
 const height = canvas.height;
 
 
-// the above can also be done with destructuring
+// the above can also be done with destructuring:
 // const { width, height } = canvas;
 console.log(width, height);
 
