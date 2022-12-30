@@ -1,6 +1,6 @@
 // select elements on the page like canvas, shake buttons
 // the canvas is the element while where we draw is the context
-const canvas = document.querySelector('#etch-a-sketch');
+const canvas = document.querySelector('canvas');
 // commmon naming convention for the context is ctx
 // there's also 3d canvas
 const ctx = canvas.getContext('2d');
