@@ -21,20 +21,20 @@
                 return n ** 2
             } else if (n >= 10) {
                 // split into single digits & add sum of squares 
-                let n = function( i){
+                let splitNumber = function(number){
                     let digits = [];
-                while (i != 0) {
-                    digits.push(i % 10);
-                    i = Math.trunc(i / 10);
-                }
-                digits.reverse();
+                    while (number != 0) {
+                        digits.push(number % 10);
+                        number = Math.trunc(number / 10);
+                    }
+                    digits.reverse();
                 
                 return digits;
                 
-                console.log(digits)
             }
+           return splitNumber(n);
             // Math.pow(digits[i], 2)
-            return n()
+            // return n()
             }
                       
             
