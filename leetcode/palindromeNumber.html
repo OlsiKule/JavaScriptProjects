@@ -88,7 +88,25 @@ return arr.sort((a, b) => (a > b ? -1 : 1))
 
 // Write a function that takes an array of numbers as argument. It should return the sum of the numbers.
 
-
+function myFunction(a){
+  let sum = 0;
+  for (let i = 0; i < a.length; i++ ){
+  sum = sum + a[i]
+  }
+  return sum;
+}
+//also
+function myFunction(a){
+  let sum = 0;
+//   this has to run first several times to add up all elements 
+  (a.forEach( a => sum += a))
+//   then apply return (this ends all operations)
+  return sum;
+}
+// also 
+function myFunction(a){
+return a.reduce( (a, b) => a + b, 0)
+}
 
 // myFunction([10,100,40])
 // Expected
@@ -99,6 +117,44 @@ return arr.sort((a, b) => (a > b ? -1 : 1))
 // myFunction([-50,0,50,200])
 // Expected
 // 200
+
+
+
+// Write a function that takes an array of numbers as argument. It should return the average of the numbers.
+
+function myFunction(a){
+ let sum = 0;
+  (a.forEach( a => sum += a))
+  return sum / a.length;
+}
+// also
+function myFunction(a){
+return (a.reduce( (a, b) => a + b, 0) / a.length); 
+}
+
+// myFunction([10,100,40])
+// Expected
+// 50
+// myFunction([10,100,1000])
+// Expected
+// 370
+// myFunction([-50,0,50,200])
+// Expected
+// 50
+
+
+// Write a function that takes an array of strings as argument. Return the longest string.
+
+function myFunction(arr){
+return arr.reduce( (a, b) => a.length >= b.length ? a : b); 
+}
+
+// myFunction(['help', 'me'])
+// Expected
+// 'help'
+// myFunction(['I', 'need', 'candy'])
+// Expected
+// 'candy'
 
 
 </script>
