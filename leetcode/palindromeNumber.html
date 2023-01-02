@@ -69,4 +69,36 @@ function myFunction(arr){
 
 
 
+// Write a function that takes an array of numbers as argument. It should return an array with the numbers sorted in descending order.
+
+return arr.sort((a, b) => b - a );
+// also
+return arr.sort().reverse();
+// also
+return arr.sort((a, b) => (a > b ? -1 : 1))
+
+// myFunction([1,3,2])
+// Expected
+// [3,2,1]
+// myFunction([4,2,3,1])
+// Expected
+// [4,3,2,1]
+
+
+
+// Write a function that takes an array of numbers as argument. It should return the sum of the numbers.
+
+
+
+// myFunction([10,100,40])
+// Expected
+// 150
+// myFunction([10,100,1000,1])
+// Expected
+// 1111
+// myFunction([-50,0,50,200])
+// Expected
+// 200
+
+
 </script>
