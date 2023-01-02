@@ -157,4 +157,88 @@ return arr.reduce( (a, b) => a.length >= b.length ? a : b);
 // 'candy'
 
 
+
+// Write a function that takes an array as argument. It should return true if all elements in the array are equal. It should return false otherwise.
+
+function myFunction(arr){
+  return arr.every(a => a === arr[0] ? true : false);
+  }
+  
+// myFunction([true, true, true, true])
+// Expected
+// true 
+// myFunction(['test', 'test', 'test'])
+// Expected
+// true 
+// myFunction([1,1,1,2])
+// Expected
+// false 
+// myFunction(['10',10,10,10])
+// Expected
+// false 
+
+
+// Write a function that takes arguments an arbitrary number of arrays. It should return an array containing the values of all arrays.
+function myFunction(...arrays){
+
+return ([].concat(...arrays));
+}
+// also 
+function myFunction(...arrays){
+
+return array.flat();
+// where default value is 1
+}
+
+
+// myFunction([1, 2, 3], [4, 5, 6])
+// Expected
+// [1, 2, 3, 4, 5, 6]
+// myFunction(['a', 'b', 'c'], [4, 5, 6])
+// Expected
+// ['a', 'b', 'c', 4, 5, 6]
+// myFunction([true, true], [1, 2], ['a', 'b'])
+// Expected
+// [true, true, 1, 2, 'a', 'b']
+
+
+
+
+// Write a function that takes an array of objects as argument. Sort the array by property b in ascending order. Return the sorted array
+
+function myFunction(arr){
+
+return arr.sort((one, two) => one.b - two.b );
+}
+//also
+function myFunction(arr) {
+   const sort = (x, y) => x.b - y.b;
+   return arr.sort(sort);
+}
+
+// myFunction([{a:1,b:2},{a:5,b:4}])
+// Expected
+// [{a:1,b:2},{a:5,b:4}]
+// myFunction([{a:2,b:10},{a:5,b:4}])
+// Expected
+// [{a:5,b:4},{a:2,b:10}]
+// myFunction([{a:1,b:7},{a:2,b:1}])
+// Expected
+// [{a:2,b:1},{a:1,b:7}]
+
+
+
+
+// Write a function that takes two arrays as arguments. Merge both arrays and remove duplicate values. Sort the merge result in ascending order. Return the resulting array
+
+
+
+// myFunction([1, 2, 3], [3, 4, 5])
+// Expected
+// [ 1, 2, 3, 4, 5 ]
+// myFunction([-10, 22, 333, 42], [-11, 5, 22, 41, 42])
+// Expected
+// [ -11, -10, 5, 22, 41,  42, 333]
+
+
 </script>
