@@ -1,5 +1,27 @@
-<!-- Write a function that takes an array (a) and a value (b) as argument. The function should remove all elements equal to 'b' from the array. Return the filtered array. -->
 <script>
+    // Write a function that takes a string (a) and a number (n) as argument. Return the nth character of 'a'.
+function myFunction(a, n){
+
+console.log( a.charAt(n-1));
+}
+// also 
+function myFunction(a, n) {
+   return a[n - 1];
+}
+
+// myFunction('abcd',1)
+// Expected
+// 'a'
+// myFunction('zyxbwpl',5)
+// Expected
+// 'w'
+// myFunction('gfedcba',3)
+// Expected
+// 'e'
+
+
+    
+// <!-- Write a function that takes an array (a) and a value (b) as argument. The function should remove all elements equal to 'b' from the array. Return the filtered array. -->
     function myFunction(a, b){
       
         return a.filter( (letter) => letter !== b)
@@ -333,5 +355,22 @@ myFunction({x:'a',b:'b',z:undefined},'z')
 Expected
 false
 */
+
+
+// Write a function that takes a string as argument. Create an object that has a property with key 'key' and a value equal to the string. Return the object.
+
+function myFunction(a){
+    return {key: a};
+}
+
+// myFunction('a')
+// Expected
+// {key:'a'}
+// myFunction('z')
+// Expected
+// {key:'z'}
+// myFunction('b')
+// Expected
+// {key:'b'}
 
 </script>
