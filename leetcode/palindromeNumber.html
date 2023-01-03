@@ -231,7 +231,15 @@ function myFunction(arr) {
 
 // Write a function that takes two arrays as arguments. Merge both arrays and remove duplicate values. Sort the merge result in ascending order. Return the resulting array
 
-
+function myFunction(a, b){
+  let newArray = (a.concat(b))
+  let sorted = newArray.sort((a, b) => a - b)
+  return [...new Set(sorted)];
+}
+// also (suggested sln)
+function myFunction(a, b) {
+  return [...new Set([...a, ...b])].sort((x, y) => x - y);
+}
 
 // myFunction([1, 2, 3], [3, 4, 5])
 // Expected
@@ -239,6 +247,49 @@ function myFunction(arr) {
 // myFunction([-10, 22, 333, 42], [-11, 5, 22, 41, 42])
 // Expected
 // [ -11, -10, 5, 22, 41,  42, 333]
+
+
+/* ******* Objects ******* */
+
+// Write a function that takes an object with two properties as argument. It should return the value of the property with key country.
+
+function myFunction(obj){
+return obj.country; // or =>  return obj["country"];
+}
+
+// myFunction({ continent: 'Asia', country: 'Japan' })
+
+// myFunction({ country: 'Sweden', continent: 'Europe' })
+
+
+
+// Write a function that takes an object with two properties as argument. It should return the value of the property with key 'prop-2'. Tipp: you might want to use the square brackets property accessor
+
+function myFunction(obj) {
+  return obj['prop-2']
+}
+
+// myFunction({  one: 1,  'prop-2': 2})
+// Expected
+// 2
+// myFunction({  'prop-2': 'two',  prop: 'test'})
+// Expected
+// 'two'
+
+
+
+// Write a function that takes an object with two properties and a string as arguments. It should return the value of the property with key equal to the value of the string
+
+function myFunction(obj, key){
+return (obj[key]);
+}
+
+// myFunction({  continent: 'Asia',  country: 'Japan'}, 'continent')
+// Expected
+// 'Asia'
+// myFunction({  country: 'Sweden',  continent: 'Europe'}, 'country')
+// Expected
+// 'Sweden'
 
 
 </script>
