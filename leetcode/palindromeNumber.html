@@ -1,9 +1,38 @@
 <script>
-    // Write a function that takes a string (a) and a number (n) as argument. Return the nth character of 'a'.
-function myFunction(a, n){
-
-console.log( a.charAt(n-1));
+/****** fundamentals  ***/
+// Write a function that takes a value as argument. Return the type of the value.
+ 
+function myFunction(a) {
+   return typeof a;
 }
+/*
+myFunction(1)
+Expected
+'number'
+myFunction(false)
+Expected
+'boolean'
+myFunction({})
+Expected
+'object'
+myFunction(null)
+Expected
+'object'
+myFunction('string')
+Expected
+'string'
+myFunction(['array'])
+Expected
+'object'
+*/ 
+
+
+
+// Write a function that takes a string (a) and a number (n) as argument. Return the nth character of 'a'.
+function myFunction(a, n){
+return a.charAt(n-1);
+}
+
 // also 
 function myFunction(a, n) {
    return a[n - 1];
@@ -19,11 +48,45 @@ function myFunction(a, n) {
 // Expected
 // 'e'
 
+// Write a function that takes a string (a) as argument. Remove the first 3 characters of a. Return the result
+
+/*
+myFunction('abcdefg')
+Expected
+'defg'
+myFunction('1234')
+Expected
+'4'
+myFunction('fgedcba')
+Expected
+'dcba'
+*/ 
+
+
+/********  Array    *************/ 
+
+// Write a function that takes an array (a) as argument. Remove the first 3 elements of 'a'. Return the result
+function myFunction(a) {
+   return a.slice(3);
+}
+
+/*
+myFunction([1,2,3,4])
+Expected
+[4]
+myFunction([5,4,3,2,1,0])
+Expected
+[2,1,0]
+myFunction([99,1,1])
+Expected
+[]
+*/
+
 
 // Write a function that takes an array (a) as argument. Extract the last 3 elements of 'a'. Return the resulting array
 function myFunction(a){
   
-  console.log (a.slice( -3));
+  return a.slice( -3);
 }
 /*
 myFunction([1,2,3,4])
@@ -326,6 +389,89 @@ function myFunction(a, b) {
 // [ -11, -10, 5, 22, 41,  42, 333]
 
 
+// Write a function that takes an array (a) and a number (b) as arguments. Sum up all array elements with a value greater than b. Return the sum
+function myFunction(a, b){
+  let sum = 0;
+  for (let i = 0; i < a.length; i++ ){
+    if (b < a[i]) sum += a[i] 
+  }
+  return (sum);
+}
+// also (suggested sln)
+function myFunction(a, b) {
+  return a.reduce((sum, cur) => {
+    if (cur > b) return sum + cur;
+    return sum;
+  }, 0);
+}
+
+/* 
+myFunction([1, 2, 3, 4, 5, 6, 7], 2)
+Expected
+25
+myFunction([-10, -11, -3, 1, -4], -3)
+Expected
+1
+myFunction([78, 99, 100, 101, 401], 99)
+Expected
+602
+*/
+
+
+// Write a function that takes two numbers (min and max) as arguments. Return an array of numbers in the range min to max
+function myFunction(min, max){
+  return (min <= max ? [min, ...myFunction(min + 1, max)] : [] );
+}
+// also
+function myFunction(min, max){
+    let arr = [];
+  for (let i = min; i <= max; i++) {
+    arr.push(i);
+  }
+return arr;
+}
+/*
+myFunction(2, 10)
+Expected
+[2, 3, 4, 5, 6, 7, 8, 9, 10]
+myFunction(1, 3)
+Expected
+[1, 2, 3]
+myFunction(-5, 5)
+Expected
+[-5, -4, -3, -2, -1, 0,  1,  2,  3,  4, 5]
+myFunction(2, 7)
+Expected
+[2, 3, 4, 5, 6, 7]
+*/ 
+
+
+// Write a function that takes an array of strings as argument. Group those strings by their first letter. Return an object that contains properties with keys representing first letters. The values should be arrays of strings containing only the corresponding strings. For example, the array ['Alf', 'Alice', 'Ben'] should be transformed to. { a: ['Alf', 'Alice'], b: ['Ben']}
+// return a string for key
+function myFunction(arr){
+return arr.reduce((store, word) => {
+    const letter = word.charAt(0)
+    const keyStore = (
+      store[letter] ||     // Does it exist in the object?
+      (store[letter] = []) // If not, create it as an empty array
+    ); 
+    keyStore.push(word)
+    return store
+  }, {})
+}
+
+/*
+myFunction(['Alf', 'Alice', 'Ben'])
+Expected
+{ a: ['Alf', 'Alice'], b: ['Ben']}
+myFunction(['Ant', 'Bear', 'Bird'])
+Expected
+{ a: ['Ant'], b: ['Bear', 'Bird']}
+myFunction(['Berlin', 'Paris', 'Prague'])
+Expected
+{ b: ['Berlin'], p: ['Paris', 'Prague']}
+*/ 
+
 /* ******* Objects ******* */
 
 // Write a function that takes an object with two properties as argument. It should return the value of the property with key country.
@@ -427,5 +573,7 @@ function myFunction(a){
 // myFunction('b')
 // Expected
 // {key:'b'}
+
+
 
 </script>
