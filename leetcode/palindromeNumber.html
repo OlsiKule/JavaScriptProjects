@@ -20,6 +20,58 @@ function myFunction(a, n) {
 // 'e'
 
 
+// Write a function that takes an array (a) as argument. Extract the last 3 elements of 'a'. Return the resulting array
+function myFunction(a){
+  
+  console.log (a.slice( -3));
+}
+/*
+myFunction([1,2,3,4])
+Expected
+[2,3,4]
+myFunction([5,4,3,2,1,0])
+Expected
+[2,1,0]
+myFunction([99,1,1])
+Expected
+[99,1,1]
+*/ 
+
+
+// Write a function that takes an array (a) as argument. Extract the first 3 elements of a. Return the resulting array
+function myFunction(a) {
+   return a.slice(0, 3);
+}
+
+/*
+myFunction([1,2,3,4])
+Expected
+[1,2,3]
+myFunction([5,4,3,2,1,0])
+Expected
+[5,4,3]
+myFunction([99,1,1])
+Expected
+[99,1,1]
+*/ 
+
+
+// Write a function that takes an array (a) and a number (n) as arguments. It should return the last n elements of a.
+function myFunction(a, n) {
+  return a.slice(-n);
+}
+
+// myFunction([1, 2, 3, 4, 5], 2)
+// Expected
+// [ 4, 5 ]
+// myFunction([1, 2, 3], 6)
+// Expected
+// [ 1, 2, 3 ]
+// myFunction([1, 2, 3, 4, 5, 6, 7, 8], 3)
+// Expected
+// [ 6, 7, 8 ]
+
+
     
 // <!-- Write a function that takes an array (a) and a value (b) as argument. The function should remove all elements equal to 'b' from the array. Return the filtered array. -->
     function myFunction(a, b){
@@ -185,7 +237,10 @@ return arr.reduce( (a, b) => a.length >= b.length ? a : b);
 function myFunction(arr){
   return arr.every(a => a === arr[0] ? true : false);
   }
-  
+//   also 
+function myFunction(arr){
+    return new Set(arr).size === 1;
+  }
 // myFunction([true, true, true, true])
 // Expected
 // true 
