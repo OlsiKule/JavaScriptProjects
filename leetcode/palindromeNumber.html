@@ -222,7 +222,48 @@ Expected
 0
 */ 
 
+
+// Write a function that takes a number (a) as argument. If a is a whole number (has no decimal place), return true. Otherwise, return false.
+function myFunction(a) {
+  return Number.isInteger(a) ;
+}
+// also
+function myFunction(a) {
+  return a - Math.floor(a) === 0
+}
+
+// myFunction(4)
+// Expected
+// true 
+// myFunction(1.123)
+// Expected
+// false 
+// myFunction(1048)
+// Expected
+// true 
+// myFunction(10.48)
+// Expected
+// false 
+
+
 /********  Array    *************/ 
+// Write a function that takes an array (a) and a value (n) as argument. Return the nth element of 'a'
+function myFunction(a, n) {
+   return a[n - 1];
+}
+
+/*myFunction([1,2,3,4,5],3)
+Expected
+3
+myFunction([10,9,8,7,6],5)
+Expected
+6
+myFunction([7,2,1,6,3],1)
+Expected
+7
+*/
+
+
 
 // Write a function that takes an array (a) as argument. Remove the first 3 elements of 'a'. Return the result
 function myFunction(a) {
@@ -640,9 +681,21 @@ Expected
 */ 
 
 
-// Write a function that takes an array with arbitrary elements and a number as arguments. Return a new array, the first element should be either the given number itself. or zero if the number is smaller than 6. The other elements should be the elements of the original array. Try not to mutate the original array
-
-
+// Write a function that takes an array with arbitrary elements and a number as arguments. Return a new array, the first element should be either the given number itself or zero if the number is smaller than 6. The other elements should be the elements of the original array. Try not to mutate the original array
+function myFunction(arr, num) {
+let newArray = (arr.concat(num));
+  if (  typeof arr[0] === "number" || num > arr[0]  ) {
+     newArray.unshift(num);
+  } else if ( arr[0] !== "number") {
+    newArray.pop(arr.length-1);
+    newArray.unshift(0);
+  } 
+  return [...new Set(newArray)];
+}
+// also (suggested sln)
+function myFunction(arr, num) {
+ return [...(num > 5 ? [num] : [0]), ...arr];
+}
 /*
 myFunction([1,2,3], 6)
 Expected
@@ -653,6 +706,37 @@ Expected
 myFunction([null,false], 11)
 Expected
 [11,null,false]
+*/ 
+
+// Write a function that takes an array (a) and a value (n) as arguments. Save every nth element in a new array. Return the new array
+function myFunction(a, n) {
+   let newArray = [];
+    for (let i = 0; i < a.length-1; i = i + n){
+      newArray = [...newArray, a[i + n-1]]; 
+  }
+     return newArray;
+}
+// also (suggested sln)
+function myFunction(a, n) {
+   let rest = [...a];
+   let result = [];
+   for (let i = 0; i < a.length; i++) {
+      if (rest.length < n) break;
+      result.push(rest[n - 1]);
+      rest = rest.slice(n);
+   }
+   return result;
+}
+/*
+myFunction([1,2,3,4,5,6,7,8,9,10],3)
+Expected
+[3,6,9]
+myFunction([10,9,8,7,6,5,4,3,2,1],5)
+Expected
+[6,1]
+myFunction([7,2,1,6,3,4,5,8,9,10],2)
+Expected
+[2,6,4,8,10]
 */ 
 
 /* ******* Objects ******* */
@@ -756,6 +840,9 @@ function myFunction(a){
 // myFunction('b')
 // Expected
 // {key:'b'}
+
+
+
 
 
 
