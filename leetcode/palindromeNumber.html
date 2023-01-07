@@ -842,8 +842,138 @@ function myFunction(a){
 // {key:'b'}
 
 
+// Write a function that takes two strings (a and b) as arguments. Create an object that has a property with key 'a' and a value of 'b'. Return the object.
+
+function myFunction(a, b) {
+   return { [a]: b };
+}
+
+// myFunction('a','b')
+// Expected
+// {a:'b'}
+// myFunction('z','x')
+// Expected
+// {z:'x'}
+// myFunction('b','w')
+// Expected
+// {b:'w'}
+
+// Write a function that takes two arrays (a and b) as arguments. Create an object that has properties with keys 'a' and corresponding values 'b'. Return the object.
+function myFunction(a, b){
+      return a.reduce((acc, cur, i) => ({ ...acc, [cur]: b[i] }), {})
+   }
+// myFunction(['a','b','c'],[1,2,3])
+// Expected
+// {a:1,b:2,c:3}
+// myFunction(['w','x','y','z'],[10,9,5,2])
+// Expected
+// {w:10,x:9,y:5,z:2}
+// myFunction([1,'b'],['a',2])
+// Expected
+// {1:'a',b:2}
 
 
+// Write a function that takes an object (a) as argument. Return an array with all object keys.
+function myFunction(a){
+return Object.keys(a).filter(key => []);
+  
+}
+// also 
+function myFunction(a) {
+   return Object.keys(a);
+}
+// myFunction({a:1,b:2,c:3})
+// Expected
+// ['a','b','c']
+// myFunction({j:9,i:2,x:3,z:4})
+// Expected
+// ['j','i','x','z']
+// myFunction({w:15,x:22,y:13})
+// Expected
+// ['w','x','y']
+
+
+// Write a function that takes an object as argument. In some cases the object contains other objects with some deeply nested properties. Return the property 'b' of object 'a' inside the original object if it exists. If not, return undefined
+
+function myFunction(obj) {
+    return obj.a ? obj.a.b : undefined;
+}
+// also 
+function myFunction(obj) {
+   return obj?.a?.b;
+}
+// myFunction({a:1})
+// Expected
+// undefined
+// myFunction({a:{b:{c:3}}})
+// Expected
+// {c:3}
+// myFunction({b:{a:1}})
+// Expected
+// undefined
+// myFunction({a:{b:2}})
+// Expected
+// 2
+
+
+// Write a function that takes an object (a) as argument. Return the sum of all object values.
+function myFunction(a) {
+   return Object.values(a).reduce((sum, cur) => sum + cur, 0);
+}
+
+// myFunction({a:1,b:2,c:3})
+// Expected
+// 6
+// myFunction({j:9,i:2,x:3,z:4})
+// Expected
+// 18
+// myFunction({w:15,x:22,y:13})
+// Expected
+// 50
+
+
+
+// Write a function that takes an object as argument. It should return an object with all original object properties. except for the property with key 'b'
+// the delete method is nor recommended b/c it can cause side effects in the code
+function myFunction(obj){
+  delete obj.b;
+  return obj ;
+}
+
+// also 
+function myFunction(obj) {
+  const { b, ...rest } = obj;
+  return rest;
+}
+// myFunction({ a: 1, b: 7, c: 3 })
+// Expected
+// { a: 1, c: 3 }
+// myFunction({ b: 0, a: 7, d: 8 })
+// Expected
+// { a: 7, d: 8 }
+// myFunction({ e: 6, f: 4, b: 5, a: 3 })
+// Expected
+// { e: 6, f: 4, a: 3 }
+
+
+
+// Write a function that takes two objects as arguments. Unfortunately, the property 'b' in the second object has the wrong key. It should be named 'd' instead. Merge both objects and correct the wrong property name. Return the resulting object. It should have the properties 'a', 'b', 'c', 'd', and 'e'
+function myFunction(x, y){
+   y.d = y.b; 
+  delete y.b;
+ return {...x, ...y};
+}
+// also
+function myFunction(x, y) {
+  const { b, ...rest } = y;
+  return { ...x, ...rest, d: b };
+}
+// myFunction({ a: 1, b: 2 }, { c: 3, b: 4, e: 5 })
+// Expected
+// { a: 1, b: 2, c: 3, e: 5, d: 4}
+// myFunction({ a: 5, b: 4 }, { c: 3, b: 1, e: 2 })
+// Expected
+// { a: 5, b: 4, c: 3, e: 2, d: 1}
 
 
 </script>
