@@ -1025,8 +1025,6 @@ Expected
 
 // Write a function that takes an object as argument. Somehow, the properties and keys of the object got mixed up. Swap the Javascript object's key with its values and return the resulting object
 function myFunction(obj) {
-  // console.log(Object.keys(obj), "keys")
-  // console.log(Object.values(obj), "values")
   const newValues = Object.keys(obj)
   const newKeys = Object.values(obj)
  const combineArrays = (first, second) => {
@@ -1035,7 +1033,7 @@ function myFunction(obj) {
       return acc;
    }, {});
 };
-  console.log(combineArrays(newKeys, newValues));
+ return combineArrays(newKeys, newValues);
 }
 // or 
 function myFunction (obj){
@@ -1116,4 +1114,46 @@ Expected
 {fn: 'Matthew', ln: 'Müller'}
 */ 
 
+
+// Write a function that takes an object as argument. Some of the property values contain empty strings. Replace empty strings and strings that contain only whitespace with null values. Return the resulting object
+function myFunction(obj) {
+Object.keys(obj).forEach(value => {
+  if (obj[value] === ''|| obj[value] === ' '){
+  obj[value] = null
+  };
+  });
+ return (obj);
+}
+
+// (suggested sln)
+function myFunction(obj) {
+  const newObj = { ...obj };
+  for (key in newObj) {
+    if (newObj[key].trim() === '') newObj[key] = null;
+  }
+  return newObj;
+}
+/*
+myFunction({ a: 'a', b: 'b', c: '' })
+Expected
+{ a: 'a', b: 'b', c: null }
+myFunction({ a: '', b: 'b', c: ' ', d: 'd' })
+Expected
+{ a: null, b: 'b', c: null, d: 'd' }
+myFunction({ a: 'a', b: 'b ', c: ' ', d: '' })
+Expected
+{ a: 'a', b: 'b ', c: null, d: null }
+*/ 
+
+
+// Write a function that takes an array of objects and a string as arguments. Add a property with key 'continent' and value equal to the string to each of the objects. Return the new array of objects. Tipp: try not to mutate the original array
+
+/*
+myFunction([{ city: 'Tokyo', country: 'Japan' }, { city: 'Bangkok', country: 'Thailand' }], 'Asia')
+Expected
+[{ city: 'Tokyo', country: 'Japan', continent: 'Asia' }, { city: 'Bangkok', country: 'Thailand', continent: 'Asia' }]
+myFunction([{ city: 'Stockholm', country: 'Sweden' }, { city: 'Paris', country: 'France' }], 'Europe')
+Expected
+[{ city: 'Stockholm', country: 'Sweden', continent: 'Europe' }, { city: 'Paris', country: 'France', continent: 'Europe' }]
+*/ 
 </script>
