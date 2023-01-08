@@ -1045,4 +1045,42 @@ function myFunction(obj) {
 // {1:'a',24:'z'}
 
 
+
+// Write a function that takes an object as argument containing properties with personal information. Extract firstName, lastName, size, and weight if available. If size or weight is given transform the value to a string. Attach the unit cm to the size. Attach the unit kg to the weight. Return a new object with all available properties that we are interested in
+function myFunction(obj) {
+  const {age, email, ...rest} = obj;
+  Object.keys(rest).forEach(function(key) {
+  if (typeof(rest.size) == 'number') {
+    return rest.size = rest.size + "cm";
+  }
+    if (typeof(rest.weight) == 'number') {
+    return rest.weight = rest.weight + "kg";
+  }
+})
+  return (rest);
+}
+// also (sln)
+function myFunction(obj) {
+  return {
+    fn: obj.fn,
+    ln: obj.ln,
+    ...(obj.size && { size: `${obj.size}cm` }),
+    ...(obj.weight && { weight: `${obj.weight}kg` }),
+  };
+}
+/*
+myFunction({fn: 'Lisa', ln: 'Müller', age: 17, size: 175, weight: 67})
+Expected
+{fn: 'Lisa', ln: 'Müller', size: '175cm', weight: '67kg'}
+myFunction({fn: 'Martin', ln: 'Harper', age: 26, email: 'martin.harper@test.de', weight: 102})
+Expected
+{fn: 'Martin', ln: 'Harper', weight: '102kg'}
+myFunction({fn: 'Andrew', ln: 'Harper', age: 81, size: 175, weight: 71})
+Expected
+{fn: 'Andrew', ln: 'Harper', size: '175cm', weight: '71kg'}
+myFunction({fn: 'Matthew', ln: 'Müller', age: 19, email: 'matthew@mueller.de'})
+Expected
+{fn: 'Matthew', ln: 'Müller'}
+*/ 
+
 </script>
