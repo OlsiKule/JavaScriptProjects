@@ -266,6 +266,38 @@ Expected
 */ 
 
 
+
+
+
+
+
+// Write a function that takes a string as argument. As it is, the string has no meaning. Increment each letter to the next letter in the alphabet. Return the correct word
+function myFunction(str) {
+    const arr = [... str]
+     arr.forEach(function(item, i){
+    arr[i] = String.fromCharCode(arr[i].charCodeAt(0) + 1)
+  })
+    return (arr.join(""))
+}
+// also
+function myFunction(str) {
+  const arr = [...str];
+  const correctedArray = arr.map(e => String.fromCharCode(e.charCodeAt()+1));
+  return correctedArray.join('');
+}
+
+// myFunction('bnchmf')
+// Expected
+// 'coding'
+// myFunction('bgddrd')
+// Expected
+// 'cheese'
+// myFunction('sdrshmf')
+// Expected
+// 'testing'
+
+
+
 /********  Array    *************/ 
 // Write a function that takes an array (a) and a value (n) as argument. Return the nth element of 'a'
 function myFunction(a, n) {
@@ -1163,7 +1195,30 @@ Expected
 */ 
 
 // Write a function that takes an array of numbers as argument. Convert the array to an object. It should have a key for each unique value of the array. The corresponding object value should be the number of times the key occurs within the array.
-
+function myFunction(a) {
+let counter = {};
+for (element of a) {
+    if (counter[element]) {
+        counter[element] += 1;
+    } else {
+        counter[element] = 1;
+    }
+};
+    return (counter);
+}
+// or 
+function myFunction(a) {
+    let countObject = myArray.reduce((count, element) => 
+    {return (count[element] ? ++count[element] : (count[element] = 1), count);
+    },
+{});
+}
+// also 
+function myFunction(a) {
+   return a.reduce((acc, cur) => {
+   	return { ...acc, [cur]: (acc[cur] || 0) + 1 };
+   }, {});
+}
 /*
 myFunction([1,2,2,3])
 Expected
