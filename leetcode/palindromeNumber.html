@@ -954,7 +954,7 @@ function myFunction(a) {
 
 
 // Write a function that takes an object as argument. It should return an object with all original object properties. except for the property with key 'b'
-// (my notes) the delete method is nor recommended b/c it can cause side effects in the code
+// (my notes) the delete method is not recommended b/c it can cause side effects in the code
 function myFunction(obj){
   delete obj.b;
   return obj ;
@@ -1147,7 +1147,12 @@ Expected
 
 
 // Write a function that takes an array of objects and a string as arguments. Add a property with key 'continent' and value equal to the string to each of the objects. Return the new array of objects. Tipp: try not to mutate the original array
+// coun't find a sln 
 
+// suggested sln
+function myFunction(arr, str) {
+  return arr.map((obj) => ({ ...obj, continent: str }));
+}
 /*
 myFunction([{ city: 'Tokyo', country: 'Japan' }, { city: 'Bangkok', country: 'Thailand' }], 'Asia')
 Expected
@@ -1156,4 +1161,18 @@ myFunction([{ city: 'Stockholm', country: 'Sweden' }, { city: 'Paris', country: 
 Expected
 [{ city: 'Stockholm', country: 'Sweden', continent: 'Europe' }, { city: 'Paris', country: 'France', continent: 'Europe' }]
 */ 
+
+// Write a function that takes an array of numbers as argument. Convert the array to an object. It should have a key for each unique value of the array. The corresponding object value should be the number of times the key occurs within the array.
+
+/*
+myFunction([1,2,2,3])
+Expected
+{1:1,2:2,3:1}
+myFunction([9,9,9,99])
+Expected
+{9:3,99:1}
+myFunction([4,3,2,1])
+Expected
+{1:1,2:1,3:1,4:1}
+*/
 </script>
