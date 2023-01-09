@@ -266,7 +266,51 @@ Expected
 */ 
 
 
+// Write a function that takes a number (a) as argument. Round a to the 2nd digit after the comma. Return the rounded number
+function myFunction(a) {
+return (Math.round(a * 100)/100);
+}
+// also (sln)
+// toFixed() returns a string that's why Number() in front
+function myFunction(a) {
+  return Number(a.toFixed(2));
+}
+// myFunction(2.12397)
+// Expected
+// 2.12
+// myFunction(3.136)
+// Expected
+// 3.14
+// myFunction(1.12397)
+// Expected
+// 1.12
+// myFunction(26.1379)
+// Expected
+// 26.14
 
+
+// Write a function that takes a number (a) as argument. Split a into its individual digits and return them in an array. Tipp: you might want to change the type of the number for the splitting
+function myFunction(a) {
+  const arr =[ ...a.toString()];
+    return ( arr.map(Number));
+}
+// also
+function myFunction( a ) {
+  const string = a + '';
+  const strings = string.split('');
+  return strings.map(digit => Number(digit))
+}
+/*
+myFunction(10)
+Expected
+[1,0]
+myFunction(931)
+Expected
+[9,3,1]
+myFunction(193278)
+Expected
+[1,9,3,2,7,8]
+*/ 
 
 
 
@@ -295,7 +339,6 @@ function myFunction(str) {
 // myFunction('sdrshmf')
 // Expected
 // 'testing'
-
 
 
 /********  Array    *************/ 
