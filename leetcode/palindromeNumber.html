@@ -1418,7 +1418,22 @@ Expected
 */ 
 
 // This is a more difficult challenge. Write a function that takes two date instances as arguments. It should return an object with the properties 'hrs', 'min', and 'sec'. The corresponding values should display the absolute difference between the two dates in hours, minutes, and seconds.
-
+function myFunction(a, b){
+  const duration = Math.abs(a - b); 
+  var milliseconds = Math.floor((duration % 1000) / 100),
+    sec = Math.floor((duration / 1000) % 60),
+    min = Math.floor((duration / (1000 * 60)) % 60),
+    hrs = Math.floor((duration / (1000 * 60 * 60)) % 24);
+ return({hrs, min, sec});
+}
+// also 
+function myFunction(a, b) {
+  const dif = Math.abs(a - b);
+  const hrs = Math.floor(dif / 1000 / 60 / 60);
+  const min = Math.floor(dif / 1000 / 60) % (hrs * 60 || 60);
+  const sec = Math.floor(dif / 1000) % (min * 60 + hrs * 60 * 60 || 60);
+  return { hrs, min, sec }
+}
 /*
 myFunction(new Date('2000/01/01 08:00:00'), new Date('2000/01/01 08:45:10'))
 Expected
