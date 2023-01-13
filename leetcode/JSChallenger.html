@@ -368,6 +368,47 @@ function myFunction(a, b) {
 // 'Downtown'
 
 
+// This challenge is a little bit more complex. Write a function that takes a number (a) as argument. If a is prime, return a. If not, return the next higher prime number.
+// this is the closest I got to the sln
+function myFunction(a){
+  for (let i = 2; i < a; i++){
+    if (Number.isInteger(a / i)){
+    console.log(a)      
+    } else for ( let j = 2; j < a; j++){
+           if ((a++ % j) === 0) {
+          console.log(a++);
+          return a++;
+             // break;
+           } }
+      }
+ }
+
+    function myFunction( a ) {
+  function isPrime(num) {
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) return false;
+    }
+    return num > 1;
+  }
+ let n = a;
+ while (!isPrime(n)) n++;
+return n
+}
+/*
+myFunction(38)
+Expected
+41
+myFunction(7)
+Expected
+7
+myFunction(115)
+Expected
+127
+myFunction(2000)
+Expected
+2003
+*/ 
+
 
 /********  Array    *************/ 
 // Write a function that takes an array (a) and a value (n) as argument. Return the nth element of 'a'
