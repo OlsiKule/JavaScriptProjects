@@ -341,6 +341,34 @@ function myFunction(str) {
 // 'testing'
 
 
+// It seems like something happened to these strings. Can you figure out how to clear up the chaos? Write a function that joins these strings together such that they form the following words:. 'Javascript', 'Countryside', and 'Downtown'. You might want to apply basic JS string methods such as replace(), split(), slice() etc.
+function myFunction(a, b){
+  let outString = b.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '')
+  let reversed = outString.split("").reverse().join("");
+  let newWord = a + reversed;
+  let finalProd = newWord.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '')
+  console.log(finalProd[0].toUpperCase() + finalProd.substring(1));
+}
+// also (sugg sln)
+function myFunction(a, b) {
+  const func = x => x.replace('%','');
+  const first = func(a);
+  const second = func(b).split('').reverse().join('');
+  return first.charAt(0).toUpperCase() + first.slice(1) + second;
+}
+
+// myFunction('java', 'tpi%rcs')
+// Expected
+// 'Javascript'
+// myFunction('c%ountry', 'edis')
+// Expected
+// 'Countryside'
+// myFunction('down', 'nw%ot')
+// Expected
+// 'Downtown'
+
+
+
 /********  Array    *************/ 
 // Write a function that takes an array (a) and a value (n) as argument. Return the nth element of 'a'
 function myFunction(a, n) {
