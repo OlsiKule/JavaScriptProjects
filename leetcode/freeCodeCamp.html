@@ -623,10 +623,10 @@ function makeList(arr) {
   return failureItems;
 }
 
-const failuresList = makeList(result.failure);
+const failureList = makeList(result.failure);
 
 // also with  .map()
-const result = {
+const results = {
   success: ["max-length", "no-amd", "prefer-arrow-functions"],
   failure: ["no-var", "var-on-top", "linebreak"],
   skipped: ["no-extra-semi", "no-dup-keys"]
@@ -638,7 +638,7 @@ function makeList(arr) {
   // change code above this line
   return failureItems;
 }
-const failuresList = makeList(result.failure);
+const failuresList = makeList(results.failure);
 
 </script>
 </body>
