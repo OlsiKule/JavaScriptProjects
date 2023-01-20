@@ -860,6 +860,89 @@ let exampleStr = "Let's have fun with regular expressions!";
 let unRegex = /.un/; // Change this line
 let res = unRegex.test(exampleStr);
 
+/*
+Positive and Negative Lookahead
+
+Lookaheads are patterns that tell JavaScript to look-ahead in your string to check for patterns further along. This can be useful when you want to search for multiple patterns over the same string.
+
+There are two kinds of lookaheads: positive lookahead and negative lookahead.
+
+A positive lookahead will look to make sure the element in the search pattern is there, but won't actually match it. A positive lookahead is used as (?=...) where the ... is the required part that is not matched.
+
+On the other hand, a negative lookahead will look to make sure the element in the search pattern is not there. A negative lookahead is used as (?!...) where the ... is the pattern that you do not want to be there. The rest of the pattern is returned if the negative lookahead part is not present.
+
+Lookaheads are a bit confusing but some examples will help.
+
+let quit = "qu";
+let noquit = "qt";
+let quRegex= /q(?=u)/;
+let qRegex = /q(?!u)/;
+quit.match(quRegex);
+noquit.match(qRegex);
+
+Both of these match calls would return ["q"].
+
+A more practical use of lookaheads is to check two or more patterns in one string. Here is a (naively) simple password checker that looks for between 3 and 6 characters and at least one number:
+
+let password = "abc123";
+let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+checkPass.test(password);
+
+Use lookaheads in the pwRegex to match passwords that are greater than 5 characters long, and have two consecutive digits.
+Tests
+
+Passed: Your regex should use two positive lookaheads.
+Passed: Your regex should not match the string astronaut
+Passed: Your regex should not match the string banan1
+Passed: Your regex should match the string bana12
+Passed: Your regex should match the string abc123
+Passed: Your regex should not match the string 12345
+Passed: Your regex should match the string 8pass99
+Passed: Your regex should not match the string 1a2bcde
+Passed: Your regex should match the string astr1on11aut
+*/
+let sampleWord = "astronaut";
+let pwRegex = /(?=\w{6,})(?=\D*\d{2})/; // Change this line
+let result = pwRegex.test(sampleWord); 
+
+
+
+
+/*
+Use Capture Groups to Search and Replace
+
+Searching is useful. However, you can make searching even more powerful when it also changes (or replaces) the text you match.
+
+You can search and replace text in a string using .replace() on a string. The inputs for .replace() is first the regex pattern you want to search for. The second parameter is the string to replace the match or a function to do something.
+
+let wrongText = "The sky is silver.";
+let silverRegex = /silver/;
+wrongText.replace(silverRegex, "blue");
+
+The replace call would return the string The sky is blue..
+
+You can also access capture groups in the replacement string with dollar signs ($).
+
+"Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1');
+
+The replace call would return the string Camp Code.
+
+Write a regex fixRegex using three capture groups that will search for each word in the string one two three. Then update the replaceText variable to replace one two three with the string three two one and assign the result to the result variable. Make sure you are utilizing capture groups in the replacement string using the dollar sign ($) syntax.
+Tests
+
+Passed: You should use .replace() to search and replace.
+Passed: Your regex should change the string one two three to the string three two one
+Passed: You should not change the last line.
+Passed: fixRegex should use at least three capture groups.
+Passed: replaceText should use parenthesized submatch string(s) (i.e. the nth parenthesized submatch string, $n, corresponds to the nth capture group).
+*/ 
+
+let str = "one two three";
+let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
+let replaceText = ("$3 $2 $1"); // Change this line
+let result = str.replace(fixRegex, replaceText);
+
+// let result = "one two three".replace( /(\w+)\s(\w+)\s(\w+)/, '$3 $2 $1');
 
 </script>
 </body>
