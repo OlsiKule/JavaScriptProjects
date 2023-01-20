@@ -903,7 +903,7 @@ Passed: Your regex should match the string astr1on11aut
 */
 let sampleWord = "astronaut";
 let pwRegex = /(?=\w{6,})(?=\D*\d{2})/; // Change this line
-let result = pwRegex.test(sampleWord); 
+let resu = pwRegex.test(sampleWord); 
 
 
 
@@ -940,9 +940,11 @@ Passed: replaceText should use parenthesized submatch string(s) (i.e. the nth pa
 let str = "one two three";
 let fixRegex = /(\w+)\s(\w+)\s(\w+)/; // Change this line
 let replaceText = ("$3 $2 $1"); // Change this line
-let result = str.replace(fixRegex, replaceText);
+let resul = str.replace(fixRegex, replaceText);
 
 // let result = "one two three".replace( /(\w+)\s(\w+)\s(\w+)/, '$3 $2 $1');
+
+
 
 </script>
 </body>
