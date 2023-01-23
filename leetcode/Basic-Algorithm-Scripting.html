@@ -8,7 +8,65 @@
 </head>
 <body>
     <script>
-        
+        /*
+        Convert Celsius to Fahrenheit
+
+The formula to convert from Celsius to Fahrenheit is the temperature in Celsius times 9/5, plus 32.
+
+You are given a variable celsius representing a temperature in Celsius. Use the variable fahrenheit already defined and assign it the Fahrenheit temperature equivalent to the given Celsius temperature. Use the formula mentioned above to help convert the Celsius temperature to Fahrenheit.
+Tests
+
+Passed: convertCtoF(0) should return a number
+Passed: convertCtoF(-30) should return a value of -22
+Passed: convertCtoF(-10) should return a value of 14
+Passed: convertCtoF(0) should return a value of 32
+Passed: convertCtoF(20) should return a value of 68
+Passed: convertCtoF(30) should return a value of 86
+*/ 
+function convertCtoF(celsius) {
+  let fahrenheit = celsius * 9/5 + 32;
+  return fahrenheit;
+}
+
+convertCtoF(30);
+
+/*
+Reverse a String
+
+Reverse the provided string and return the reversed string.
+
+For example, "hello" should become "olleh".
+Tests
+
+Passed: reverseString("hello") should return a string.
+Passed: reverseString("hello") should return the string olleh.
+Passed: reverseString("Howdy") should return the string ydwoH.
+Passed: reverseString("Greetings from Earth") should return the string htraE morf sgniteerG.
+*/ 
+
+function reverseString(str) {
+return str === "" ? "" : reverseString(str.substr(1)) + str.charAt(0); 
+}
+
+reverseString("hello");
+
+// also 
+function reverseString(str) {
+      let res = "";
+      for (let i=str.length-1; i>=0; i--){
+       res += str[i];
+      }
+    return res;
+}
+
+reverseString("hello");
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
+reverseString("hello");
+
+
 
     </script>
 </body>
