@@ -133,6 +133,21 @@ function findLongestWordLength(str) {
 
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
+// another way using for loop which I had in mind
+function findLongestWordLength(str) {
+  let strArr = str.split(" ")
+  let numArr = 0;
+  for (let i = 0; i < strArr.length; i++){
+    // at this point I was looking to apply this: numArr.push(strArr[i].length); and then move on with Math.max to find the biggest num ===> of course numArr = [];
+    if (strArr[i].length > numArr){
+      numArr = strArr[i].length;
+    }
+  }
+  return numArr;
+}
+
+findLongestWordLength("What if we try a super-long word such as otorhinolaryngology");
+
 
     </script>
 </body>
