@@ -66,6 +66,72 @@ function reverseString(str) {
 }
 reverseString("hello");
 
+/*
+Factorialize a Number
+
+Return the factorial of the provided integer.
+
+If the integer is represented with the letter n, a factorial is the product of all positive integers less than or equal to n.
+
+Factorials are often represented with the shorthand notation n!
+
+For example: 5! = 1 * 2 * 3 * 4 * 5 = 120
+
+Only integers greater than or equal to zero will be supplied to the function.
+Tests
+
+Passed: factorialize(5) should return a number.
+Passed: factorialize(5) should return 120.
+Passed: factorialize(10) should return 3628800.
+Passed: factorialize(20) should return 2432902008176640000.
+Passed: factorialize(0) should return 1.
+*/ 
+
+function factorialize(num) {
+  let factor = 1;
+  for (let i = 1; i <= num; i++){
+    factor *= [i];
+  }
+  return factor;
+}
+
+factorialize(5);
+
+// also with recursive fxn
+function factorialize(num) {
+  if (num === 0) {
+    return 1;
+  }
+  return num * factorialize(num - 1);
+}
+
+factorialize(5);
+
+
+/*
+Find the Longest Word in a String
+
+Return the length of the longest word in the provided sentence.
+
+Your response should be a number.
+Tests
+
+Passed: findLongestWordLength("The quick brown fox jumped over the lazy dog") should return a number.
+Passed: findLongestWordLength("The quick brown fox jumped over the lazy dog") should return 6.
+Passed: findLongestWordLength("May the force be with you") should return 5.
+Passed: findLongestWordLength("Google do a barrel roll") should return 6.
+Passed: findLongestWordLength("What is the average airspeed velocity of an unladen swallow") should return 8.
+Passed: findLongestWordLength("What if we try a super-long word such as otorhinolaryngology") should return 19.
+*/ 
+
+function findLongestWordLength(str) {
+  let strArr = str.split(" ")
+  let numArr =  strArr.map(string => string.length);
+  let length = Math.max(...numArr);
+  return length;
+}
+
+findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
 
     </script>
