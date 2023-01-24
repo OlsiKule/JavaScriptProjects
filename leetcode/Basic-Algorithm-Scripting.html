@@ -133,10 +133,10 @@ findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
 // another way using for loop which I had in mind
 function findLongestWordLength(str) {
-  let strArr = str.split(" ")
+  let strArr = str.split(" ");
   let numArr = 0;
   for (let i = 0; i < strArr.length; i++){
-    // at this point I was looking to apply this: numArr.push(strArr[i].length); and then move on with Math.max to find the biggest num ===> of course numArr = [];
+    // at this point I was looking to apply  numArr.push(strArr[i].length); and then move on with Math.max to find the biggest num ===> of course numArr = [];
     if (strArr[i].length > numArr){
       numArr = strArr[i].length;
     }
@@ -144,6 +144,13 @@ function findLongestWordLength(str) {
   return numArr;
 }
 findLongestWordLength("What if we try a super-long word such as otorhinolaryngology");
+
+function findLongestWordLength(s) {
+  return s
+    .split(' ')
+    // reduce and math.max as a callback fxn seem to go hand in hand as per MDN's site
+    .reduce((longest, word) => Math.max(longest, word.length), 0);
+}
 
 
     </script>
