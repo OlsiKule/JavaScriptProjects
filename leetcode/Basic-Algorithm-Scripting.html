@@ -228,8 +228,7 @@ Passed: Your code should not use the built-in method .endsWith() to solve the ch
 function confirmEnding(str, target) {
   let n = target.length;
   let end = str.substring(str.length - n)
-  // this line can be simplified to => return target === end;
-  return target === end ? true : false;
+  return target === end;
 
 }
 
@@ -243,6 +242,8 @@ function confirmEnding(str, target) {
 }
 
 confirmEnding("He has to give me a new name", "name"); 
+// this approach looks strickly at numbers and not the string itself eg if "name" is replaced with "nope" it will still return true 
+
     </script>
 </body>
 </html>
