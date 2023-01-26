@@ -204,7 +204,45 @@ function largestOfFour(arr) {
     });
   });
 }
+/*
+Confirm the Ending
 
+Check if a string (first argument, str) ends with the given target string (second argument, target).
+
+This challenge can be solved with the .endsWith() method, which was introduced in ES2015. But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
+Tests
+
+Passed: confirmEnding("Bastian", "n") should return true.
+Passed: confirmEnding("Congratulation", "on") should return true.
+Passed: confirmEnding("Connor", "n") should return false.
+Passed: confirmEnding("Walking on water and developing software from a specification are easy if both are frozen", "specification") should return false.
+Passed: confirmEnding("He has to give me a new name", "name") should return true.
+Passed: confirmEnding("Open sesame", "same") should return true.
+Passed: confirmEnding("Open sesame", "sage") should return false.
+Passed: confirmEnding("Open sesame", "game") should return false.
+Passed: confirmEnding("If you want to save our world, you must hurry. We dont know how much longer we can withstand the nothing", "mountain") should return false.
+Passed: confirmEnding("Abstraction", "action") should return true.
+Passed: Your code should not use the built-in method .endsWith() to solve the challenge.
+*/
+
+function confirmEnding(str, target) {
+  let n = target.length;
+  let end = str.substring(str.length - n)
+  // this line can be simplified to => return target === end;
+  return target === end ? true : false;
+
+}
+
+confirmEnding("Congratulation", "on");
+
+// author's sln
+function confirmEnding(str, target) {
+  // "Never give up and good luck will find you."
+  // -- Falcor
+  return str.slice(str.length - target.length) === target;
+}
+
+confirmEnding("He has to give me a new name", "name"); 
     </script>
 </body>
 </html>
