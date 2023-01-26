@@ -280,6 +280,11 @@ if (num <= 0){
 
 repeatStringNumTimes("abc", 3);
 
+// both author's sln were ID to mine 
+// 3rd sln was a consolidation of the recursive fxn using ternary operation
+function repeatStringNumTimes(str, num) {
+  return num > 0 ? str + repeatStringNumTimes(str, num - 1) : '';
+}
 
     </script>
 </body>
