@@ -196,7 +196,14 @@ function largestOfFour(arr) {
   }
   return results;
 }
-
+// this sln is a little bit too advanced although I understand it
+function largestOfFour(arr) {
+  return arr.map(function(group) {
+    return group.reduce(function(prev, current) {
+      return current > prev ? current : prev;
+    });
+  });
+}
 
     </script>
 </body>
