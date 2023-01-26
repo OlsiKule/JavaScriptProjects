@@ -244,6 +244,43 @@ function confirmEnding(str, target) {
 confirmEnding("He has to give me a new name", "name"); 
 // this approach looks strickly at numbers and not the string itself eg if "name" is replaced with "nope" it will still return true 
 
+/*
+Repeat a String Repeat a String
+
+Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number. For the purpose of this challenge, do not use the built-in .repeat() method.
+Tests
+
+Passed: repeatStringNumTimes("*", 3) should return the string ***.
+Passed: repeatStringNumTimes("abc", 3) should return the string abcabcabc.
+Passed: repeatStringNumTimes("abc", 4) should return the string abcabcabcabc.
+Passed: repeatStringNumTimes("abc", 1) should return the string abc.
+Passed: repeatStringNumTimes("*", 8) should return the string ********.
+Passed: repeatStringNumTimes("abc", -2) should return an empty string ("").
+Passed: The built-in repeat() method should not be used.
+Passed: repeatStringNumTimes("abc", 0) should return "".
+*/ 
+
+function repeatStringNumTimes(str, num) {
+  let add = "";
+  if (num > 0)
+  for (let i = 0; i < num; i++){
+     add += str;
+  }
+  return add;
+}
+repeatStringNumTimes("abc", 3);
+
+// another sln I came up with using recursive fxn
+function repeatStringNumTimes(str, num) {
+if (num <= 0){
+  return "";
+}
+ return str + repeatStringNumTimes(str, num -1);
+}
+
+repeatStringNumTimes("abc", 3);
+
+
     </script>
 </body>
 </html>
