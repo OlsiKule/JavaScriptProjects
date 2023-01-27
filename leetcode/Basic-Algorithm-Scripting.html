@@ -344,6 +344,86 @@ function findElement(arr, func) {
   return arr[arr.map(func).indexOf(true)];
 }
 
+
+/*
+Boo who
+
+Check if a value is classified as a boolean primitive. Return true or false.
+
+Boolean primitives are true and false.
+Tests
+
+Passed: booWho(true) should return true.
+Passed: booWho(false) should return true.
+Passed: booWho([1, 2, 3]) should return false.
+Passed: booWho([].slice) should return false.
+Passed: booWho({ "a": 1 }) should return false.
+Passed: booWho(1) should return false.
+Passed: booWho(NaN) should return false.
+Passed: booWho("a") should return false.
+Passed: booWho("true") should return false.
+Passed: booWho("false") should return false.
+*/ 
+function booWho(bool) {
+ return bool === true || bool === false ? true : false
+}
+
+booWho(false);
+
+// author's sln 
+function booWho(bool) {
+  return bool === "boolean";
+}
+
+
+/*
+Title Case a Sentence
+
+Return the provided string with the first letter of each word capitalized. Make sure the rest of the word is in lower case.
+
+For the purpose of this exercise, you should also capitalize connecting words like the and of.
+Tests
+
+Passed: titleCase("I'm a little tea pot") should return a string.
+Passed: titleCase("I'm a little tea pot") should return the string I'm A Little Tea Pot.
+Passed: titleCase("sHoRt AnD sToUt") should return the string Short And Stout.
+Passed: titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return the string Here Is My Handle Here Is My Spout.
+*/ 
+
+// this sln is a little too long
+function titleCase(str) {
+  let arr = str.toLowerCase().split(' ')
+  let cap = []
+  for (let i = 0; i < arr.length; i++){
+ cap += ( arr[i][0].toUpperCase() + arr[i].substring(1,arr[i].length) + " " )
+  }
+    return cap.toString().replace(/\s$/g, '');
+}
+titleCase("I'm a little tea pot");
+
+// author's sln similar to mine
+function titleCase(str) {
+  const newTitle = str.split(" ");
+  const updatedTitle = [];
+  for (let st in newTitle) {
+    updatedTitle[st] = newTitle[st][0].toUpperCase() + newTitle[st].slice(1).toLowerCase();
+  }
+  return updatedTitle.join(" ");
+}
+
+// author's sln 
+function titleCase(str) {
+  return str
+    .toLowerCase()
+    .split(" ")
+    .map(val => val.replace(val.charAt(0), val.charAt(0).toUpperCase()))
+    .join(" ");
+}
+// notice how map() method takes a callback fxn 
+titleCase("I'm a little tea pot");
+
+
+
 </script>
 </body>
 </html>
