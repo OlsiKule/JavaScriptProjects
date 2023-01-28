@@ -485,15 +485,19 @@ Passed: You should not mutate arr.
 */ 
 
 function bouncer(arr) {
-  let arr1 = arr.slice()
   let array = [];
-for (let i = 0; i < arr1.length; i++){
- Boolean(arr1[i]) ?  array.push((arr1[i])) : i++;
-//  also works with !!arr1[i] 
+for (let i = 0; i < arr.length; i++){
+ Boolean(arr[i]) ?  array.push((arr[i])) : i++;
+//  also works with !!arr[i] and arr[i]
   }
   return array
 }
 bouncer([7, "ate", "", false, 9]);
+
+// author's sln: talk about a one liner
+function bouncer(arr) {
+  return arr.filter(Boolean);
+}
 
 
 </script>
