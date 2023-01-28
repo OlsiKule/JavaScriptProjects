@@ -450,7 +450,21 @@ return arr2.slice(0, n).concat(arr1, array);
 }
 
 frankenSplice(["claw", "tentacle"], ["head", "shoulders", "knees", "toes"], 2);
+// it can be done with for loops as well (I think)
 
+// author's sln (as my original intended sln)
+function frankenSplice(arr1, arr2, n) {
+  // It's alive. It's alive!
+  let localArray = arr2.slice();
+  for (let i = 0; i < arr1.length; i++) {
+    // here was getting an emply array which confused me and gave up
+    localArray.splice(n, 0, arr1[i]);
+    // console.loging localArray shows how arr2 is being updated
+    n++;
+    // increasing n by 1 each time updates the index position this way the order of elements in arr1 is maintained 
+  }
+  return localArray;
+}
 
 
 </script>
