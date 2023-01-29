@@ -607,6 +607,39 @@ function mutation(arr) {
     });
 }
 
+
+/*
+Chunky Monkey
+
+Write a function that splits an array (first argument) into groups the length of size (second argument) and returns them as a two-dimensional array.
+Tests
+
+Passed: chunkArrayInGroups(["a", "b", "c", "d"], 2) should return [["a", "b"], ["c", "d"]].
+Failed: chunkArrayInGroups([0, 1, 2, 3, 4, 5], 3) should return [[0, 1, 2], [3, 4, 5]].
+Passed: chunkArrayInGroups([0, 1, 2, 3, 4, 5], 2) should return [[0, 1], [2, 3], [4, 5]].
+Failed: chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4) should return [[0, 1, 2, 3], [4, 5]].
+Passed: chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3) should return [[0, 1, 2], [3, 4, 5], [6]].
+Failed: chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4) should return [[0, 1, 2, 3], [4, 5, 6, 7], [8]].
+Failed: chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) should return [[0, 1], [2, 3], [4, 5], [6, 7], [8]].
+*/
+
+// this the closest I've come to solving this challenge
+function chunkArrayInGroups(arr, size) {
+  let subArr = [];
+    let spliced = [];
+  for (let i = 0; i < arr.length+size; i++){
+    spliced = arr.splice(0 , size)
+    console.log("spliced =>", spliced)
+      subArr.push(spliced)
+}
+      arr.push(spliced)
+      console.log("arr =>", arr)
+      console.log("subArr =>",subArr)
+      return arr, subArr;
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2);
+
 </script>
 </body>
 </html>
