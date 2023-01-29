@@ -623,22 +623,46 @@ Failed: chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 4) should return [[0, 1,
 Failed: chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2) should return [[0, 1], [2, 3], [4, 5], [6, 7], [8]].
 */
 
-// this the closest I've come to solving this challenge
+// after much deliberation
 function chunkArrayInGroups(arr, size) {
   let subArr = [];
-    let spliced = [];
+  let spliced = [];
+
   for (let i = 0; i < arr.length+size; i++){
-    spliced = arr.splice(0 , size)
-    console.log("spliced =>", spliced)
+    if ( arr.length > size) { 
+      spliced = arr.splice(0 , size)
       subArr.push(spliced)
-}
-      arr.push(spliced)
-      console.log("arr =>", arr)
-      console.log("subArr =>",subArr)
-      return arr, subArr;
-}
+      } 
+    }
+
+      subArr.push(arr)
+      return  subArr;
+  }
 
 chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 2);
+// tryingo to finnd a way with reduce method
+
+
+// author's sln 
+function chunkArrayInGroups(arr, size) {
+  let temp = [];
+  const result = [];
+
+  for (let a = 0; a < arr.length; a++) {
+    // very creative way to have a small adjustable loop 
+    if (a % size !== size - 1) temp.push(arr[a]);
+    else {
+      temp.push(arr[a]);
+      result.push(temp);
+      temp = [];
+    }
+  }
+
+  if (temp.length !== 0) result.push(temp);
+  return result;
+}
+
+
 
 </script>
 </body>
