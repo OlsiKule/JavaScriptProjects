@@ -587,7 +587,7 @@ Passed: mutation(["Noel", "Ole"]) should return true.
 
 function mutation(arr) {
   let arrL = arr.map(name => name.toLowerCase());
- let arr0 = arrL[0]
+ let arr0 = arrL[0];
  let res = [];
     for (let j = 0; j < arrL[1].length; j++){
        res.push(arr0.includes(arrL[1][j]));
@@ -596,6 +596,16 @@ function mutation(arr) {
   }
 
 mutation(["voodoo", "no"]);
+
+// author's sln 
+function mutation(arr) {
+  return arr[1]
+    .toLowerCase()
+    .split("")
+    .every(function(letter) {
+      return arr[0].toLowerCase().indexOf(letter) !== -1;
+    });
+}
 
 </script>
 </body>
