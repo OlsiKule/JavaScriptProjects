@@ -42,6 +42,86 @@ Waiting: Your code should use the this keyword to access the numLegs property of
 
 console.log(dog.sayLegs());
 
+
+/*
+Define a Constructor Function
+
+Constructors are functions that create new objects. They define properties and behaviors that will belong to the new object. Think of them as a blueprint for the creation of new objects.
+
+Here is an example of a constructor:
+
+function Bird() {
+  this.name = "Albert";
+  this.color = "blue";
+  this.numLegs = 2;
+}
+
+This constructor defines a Bird object with properties name, color, and numLegs set to Albert, blue, and 2, respectively. Constructors follow a few conventions:
+
+    Constructors are defined with a capitalized name to distinguish them from other functions that are not constructors.
+    Constructors use the keyword this to set properties of the object they will create. Inside the constructor, this refers to the new object it will create.
+    Constructors define properties and behaviors instead of returning a value as other functions might.
+
+Create a constructor, Dog, with properties name, color, and numLegs that are set to a string, a string, and a number, respectively.
+Tests
+
+Passed: Dog should have a name property set to a string.
+Passed: Dog should have a color property set to a string.
+Passed: Dog should have a numLegs property set to a number.
+*/ 
+
+function Dog() {
+  this.name = "doggo";
+  this.color = "golden retriever";
+  this.numLegs = 4;
+}
+
+/*
+Use a Constructor to Create Objects
+
+Here's the Bird constructor from the previous challenge:
+
+function Bird() {
+  this.name = "Albert";
+  this.color  = "blue";
+  this.numLegs = 2;
+}
+
+let blueBird = new Bird();
+
+NOTE: this inside the constructor always refers to the object being created.
+
+Notice that the new operator is used when calling a constructor. This tells JavaScript to create a new instance of Bird called blueBird. Without the new operator, this inside the constructor would not point to the newly created object, giving unexpected results. Now blueBird has all the properties defined inside the Bird constructor:
+
+blueBird.name;
+blueBird.color;
+blueBird.numLegs;
+
+Just like any other object, its properties can be accessed and modified:
+
+blueBird.name = 'Elvira';
+blueBird.name;
+
+Use the Dog constructor from the last lesson to create a new instance of Dog, assigning it to a variable hound.
+Tests
+
+Passed: hound should be created using the Dog constructor.
+Passed: Your code should use the new operator to create an instance of Dog.
+*/ 
+
+function Dog() {
+  this.name = "Rupert";
+  this.color = "brown";
+  this.numLegs = 4;
+}
+// Only change code below this line
+
+let hound = new Dog();
+// hound.name = "Scooby";
+// console.log(hound.name)
+
+
+
     </script>
 </body>
 </html>
