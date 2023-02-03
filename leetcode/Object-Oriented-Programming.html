@@ -872,6 +872,86 @@ Dog.prototype.bark = function(){
 let beagle = new Dog();
 
 
+/*
+Override Inherited Methods
+
+In previous lessons, you learned that an object can inherit its behavior (methods) from another object by referencing its prototype object:
+
+ChildObject.prototype = Object.create(ParentObject.prototype);
+
+Then the ChildObject received its own methods by chaining them onto its prototype:
+
+ChildObject.prototype.methodName = function() {...};
+
+It's possible to override an inherited method. It's done the same way - by adding a method to ChildObject.prototype using the same method name as the one to override. Here's an example of Bird overriding the eat() method inherited from Animal:
+
+function Animal() { }
+Animal.prototype.eat = function() {
+  return "nom nom nom";
+};
+function Bird() { }
+
+Bird.prototype = Object.create(Animal.prototype);
+
+Bird.prototype.eat = function() {
+  return "peck peck peck";
+};
+
+If you have an instance let duck = new Bird(); and you call duck.eat(), this is how JavaScript looks for the method on the prototype chain of duck:
+
+    duck => Is eat() defined here? No.
+    Bird => Is eat() defined here? => Yes. Execute it and stop searching.
+    Animal => eat() is also defined, but JavaScript stopped searching before reaching this level.
+    Object => JavaScript stopped searching before reaching this level.
+
+Override the fly() method for Penguin so that it returns the string Alas, this is a flightless bird.
+Tests
+
+Passed: penguin.fly() should return the string Alas, this is a flightless bird.
+Passed: The bird.fly() method should return the string I am flying!
+*/ 
+
+function Bird() { }
+
+Bird.prototype.fly = function() { return "I am flying!"; };
+
+function Penguin() { }
+Penguin.prototype = Object.create(Bird.prototype);
+Penguin.prototype.constructor = Penguin;
+
+// Only change code below this line
+Penguin.prototype.fly = function() {
+  return "Alas, this is a flightless bird.";
+}
+
+// Only change code above this line
+
+let penguin = new Penguin();
+console.log(penguin.fly());
+
+
+/*
+Understand the Immediately Invoked Function Expression (IIFE)
+
+A common pattern in JavaScript is to execute a function as soon as it is declared:
+
+(function () {
+  console.log("Chirp, chirp!");
+})();
+
+This is an anonymous function expression that executes right away, and outputs Chirp, chirp! immediately.
+
+Note that the function has no name and is not stored in a variable. The two parentheses () at the end of the function expression cause it to be immediately executed or invoked. This pattern is known as an immediately invoked function expression or IIFE.
+
+Rewrite the function makeNest and remove its call so instead it's an anonymous immediately invoked function expression (IIFE).
+*/ 
+
+(function () {
+  console.log("A cozy nest is ready");
+}());
+
+// makeNest();
+
 
     </script>
 </body>
