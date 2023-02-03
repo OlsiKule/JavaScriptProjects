@@ -720,7 +720,7 @@ Animal.prototype = {
 
 // Only change code below this line
 
-let duck = Object.create(Animal.prototype);
+let ducks = Object.create(Animal.prototype);
 let beegle = Object.create(Animal.prototype);
 
 
@@ -762,7 +762,7 @@ function Dog() { }
 // Only change code below this line
 
 
-let beagle = new Dog();
+let beagles = new Dog();
 Dog.prototype = Object.create(Animal.prototype);
 
 console.log(typeof Animal)
@@ -806,7 +806,7 @@ Dog.prototype = Object.create(Animal.prototype);
 
 
 let duck = new Bird();
-let beagle = new Dog();
+let baegle = new Dog();
 
 Dog.prototype.constructor = Dog;
 beagle.constructor;
@@ -869,7 +869,7 @@ Dog.prototype.bark = function(){
 }
 
 // Only change code above this line
-let beagle = new Dog();
+let beagled = new Dog();
 
 
 /*
