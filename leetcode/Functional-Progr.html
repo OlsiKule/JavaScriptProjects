@@ -39,7 +39,7 @@ Given a function (representing the tea type) and number of cups needed, the
 following function returns an array of strings (each representing a cup of
 a specific type of tea).
 */
-const getTea = (numOfCups) => {
+const getsTea = (numOfCups) => {
   const teaCups = [];
 
   for(let cups = 1; cups <= numOfCups; cups += 1) {
@@ -50,7 +50,7 @@ const getTea = (numOfCups) => {
 };
 
 // Only change code below this line
-const tea4TeamFCC = getTea(40);
+const tea4TeamFCC = getsTea(40);
 // console.log(prepareTea())
 // Only change code above this line
 
@@ -221,11 +221,11 @@ Passed: Your incrementer function should return a value based on the global fixe
 */ 
 
 // The global variable
-let fixedValue = 4;
+let fixValue = 4;
 
 function incrementer() {
   // Only change code below this line
-  return fixedValue + 1
+  return fixValue + 1
 
   // Only change code above this line
 }
