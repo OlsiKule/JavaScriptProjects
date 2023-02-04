@@ -148,7 +148,7 @@ Passed: finalTabs.tabs should be ['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium',
 
 */ 
 
-// Recovery Road
+
 
 // tabs is an array of titles of each site open within the window
 const Window = function(tabs) {
@@ -194,6 +194,7 @@ const finalTabs = socialWindow
   .join(workWindow.tabClose(1).tabOpen());
 console.log(finalTabs.tabs.length);
 console.log(finalTabs.tabs);
+
 
 
 
