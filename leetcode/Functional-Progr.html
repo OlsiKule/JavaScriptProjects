@@ -287,6 +287,33 @@ Failed: remove(add(bookList, "A Brief History of Time"), "On The Electrodynamics
 */ 
 
 
+// The global variable
+const bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+
+// Change code below this line
+function add(bookList, bookName) {
+  const addList = bookList.slice();
+  addList.push(bookName);
+  console.log(addList, "this one adds")
+  return addList;
+  
+  // Change code above this line
+}
+
+// Change code below this line
+function remove(bookList, bookName) {
+  const rmvList = bookList.slice();
+  const book_index = rmvList.indexOf(bookName);
+  if (book_index >= 0) {
+
+    rmvList.splice(book_index, 1);
+    return rmvList;
+
+    // Change code above this line
+    }
+}
+// this one was a little more challenging
+
 
     </script>
 </body>
