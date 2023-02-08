@@ -316,7 +316,7 @@ function remove(bookList, bookName) {
 // more elegant ways to solve this challenge
 
 // the global variable
-var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+var booksList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
 /* This function should add a book to the list and return the list */
 // New parameters should come before bookName
@@ -341,17 +341,17 @@ function remove(arr, bookName) {
   }
 }
 
-var newBookList = add(bookList, 'A Brief History of Time');
-var newerBookList = remove(bookList, 'On The Electrodynamics of Moving Bodies');
-var newestBookList = remove(add(bookList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
+var newBooksList = add(booksList, 'A Brief History of Time');
+var newerBookList = remove(booksList, 'On The Electrodynamics of Moving Bodies');
+var newestBookList = remove(add(booksList, 'A Brief History of Time'), 'On The Electrodynamics of Moving Bodies');
 
-console.log(bookList);
+console.log(booksList);
 
 
 // also : 
 
 // the global variable
-var bookList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
+var booksList = ["The Hound of the Baskervilles", "On The Electrodynamics of Moving Bodies", "Philosophiæ Naturalis Principia Mathematica", "Disquisitiones Arithmeticae"];
 
 /* This function should add a book to the list and return the list */
 // New parameters should come before bookName
@@ -579,7 +579,7 @@ this.forEach((element, index, array) => {
   // Only change code above this line
   return newArray;
 };
-// couldn't solve this on my own, had to loop up the answer as I didn't understand the usage of "this"
+// couldn't solve this on my own, had to look up the answer as I didn't understand the usage of "this"
 
 
 /*
@@ -735,6 +735,33 @@ const filteredList = watchList.filter(rating => rating["imdbRating"] >= 8)
 // Only change code above this line
 
 console.log(filteredList);
+
+
+/*
+Implement the filter Method on a Prototype
+
+You might learn a lot about the filter method if you implement your own version of it. It is recommended you use a for loop or Array.prototype.forEach().
+
+Write your own Array.prototype.myFilter(), which should behave exactly like Array.prototype.filter(). You should not use the built-in filter method. The Array instance can be accessed in the myFilter method using this.
+Tests
+
+Passed: [23, 65, 98, 5, 13].myFilter(item => item % 2) should equal [23, 65, 5, 13].
+Passed: ["naomi", "quincy", "camperbot"].myFilter(element => element === "naomi") should return ["naomi"].
+Passed: [1, 1, 2, 5, 2].myFilter((element, index, array) => array.indexOf(element) === index) should return [1, 2, 5].
+Passed: Your code should not use the filter method.
+*/ 
+
+
+Array.prototype.myFilter = function(callback) {
+  const newArray = [];
+  // Only change code below this line
+  for (let i = 0; i < this.length; i++) {
+    if (Boolean(callback(this[i], i, this)) === true)
+    newArray.push(this[i]);
+  }
+  // Only change code above this line
+  return newArray;
+};
 
 
     </script>
