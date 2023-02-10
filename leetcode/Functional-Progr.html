@@ -1252,7 +1252,7 @@ Passed: splitify("This.is.a-sentence") should return ["This", "is", "a", "senten
 function splitify(str) {
   // Only change code below this line
 let arr = str.split(/[^a-zA-Z0-9]/g)
-console.log(arr)
+// console.log(arr)
 return arr
   // Only change code above this line
 }
@@ -1324,7 +1324,24 @@ The output is a string with the spaces between words replaced by a hyphen (-)
 The output should be all lower-cased letters
 
 The output should not have any spaces
+Your code should not use the replace method for this challenge.
+Passed: urlSlug("Winter Is Coming") should return the string winter-is-coming.
+Passed: urlSlug(" Winter Is  Coming") should return the string winter-is-coming.
+Passed: urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone") should return the string a-mind-needs-books-like-a-sword-needs-a-whetstone.
+Passed: urlSlug("Hold The Door") should return the string hold-the-door.
 */ 
+
+// Only change code below this line
+function urlSlug(title) {
+let split = title.toLowerCase()
+.split(/\W/)
+.filter(str => str.trim() !== "")
+.join("-")
+return split;
+
+}
+// Only change code above this line
+urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone")
 
 
 
