@@ -1202,8 +1202,8 @@ function nonMutatingSort(arr) {
   // Only change code below this line
   let newArr = arr.slice(0).sort((a, b) => a - b);
   // also : 
-  let bigArr = [];
-  let newArr = bigArr.concat(arr).sort((a, b) => a - b);
+  let bigArray = [];
+  let newArray = bigArr.concat(arr).sort((a, b) => a - b);
 return newArr
   // Only change code above this line
 }
@@ -1211,7 +1211,7 @@ return newArr
 nonMutatingSort(globalArray);
 
 // author's sln
-var globalArray = [5, 6, 3, 2, 9];
+var gloArray = [5, 6, 3, 2, 9];
 function nonMutatingSort(arr) {
   // Add your code below this line
   return [].concat(arr).sort(function(a, b) {
