@@ -614,7 +614,7 @@ Passed: filteredList should equal [{"title": "Inception", "rating": "8.8"}, {"ti
 */
 
 // The global variable
-const watchList = [
+const watchyList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -905,7 +905,7 @@ Passed: Your code should return the correct output after modifying the watchList
 */ 
 
 // The global variable
-const watchList = [
+const watchedList = [
   {
     "Title": "Inception",
     "Year": "2010",
@@ -1018,10 +1018,10 @@ const watchList = [
   }
 ];
 
-function getRating(watchList) {
+function getRating(watchedList) {
   // Only change code below this line
   //  averageRating ;
-  const filteredList = watchList.filter(movies => movies["Director"] === "Christopher Nolan")
+  const filteredList = watchedList.filter(movies => movies["Director"] === "Christopher Nolan")
 .map(movies => ({ title: movies.Title, rating: parseFloat(movies.imdbRating)}));
 
 console.log(filteredList)
@@ -1102,7 +1102,7 @@ const squareList = arr => {
 const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
 console.log(squaredIntegers);
 
-const squareList = arr => {
+const squaredList = arr => {
   // Only change code below this line
 return arr.reduce((sqrIntegers, num) => {
     return Number.isInteger(num) && num > 0
@@ -1112,7 +1112,7 @@ return arr.reduce((sqrIntegers, num) => {
   // Only change code above this line
 };
 
-const squaredIntegers = squareList([-3, 4.8, 5, 3, -3.2]);
+const squaredInteger = squareList([-3, 4.8, 5, 3, -3.2]);
 console.log(squaredIntegers);
 
   
