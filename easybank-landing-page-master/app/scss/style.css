@@ -323,7 +323,6 @@ button:hover, .button:hover {
 @media (min-width: 64em) {
   .feature__grid {
     display: flex;
-    background-color: red;
   }
 }
 @media (min-width: 64em) {
