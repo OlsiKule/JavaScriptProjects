@@ -51,3 +51,13 @@ const sumAll = arr => {
     const sum = ((startNum + endNum) * numCount) / 2;
     return sum;
   };
+
+//   author's sln => interesting case of recursive fxn 
+function sumAll(arr) {
+    const [first, last] = [...arr].sort((a, b) => a - b);
+    return first !== last
+      ? first + sumAll([first + 1, last])
+      : first;
+  }
+  
+  sumAll([1, 4]);
