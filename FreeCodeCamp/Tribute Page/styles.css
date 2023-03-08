@@ -1,6 +1,7 @@
 #image {
-    max-width: 100%;
     height: auto;
+    max-width: 1024px;
+    max-height: 623px;
 }
 
 html {
