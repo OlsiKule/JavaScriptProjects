@@ -1,3 +1,9 @@
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
 html,
 body {
   min-width: 290px;
