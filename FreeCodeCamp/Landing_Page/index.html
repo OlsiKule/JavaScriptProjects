@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Landing Page</title>
 </head>
-<body>
+<!-- <body>
     <header id="header">
         <nav id="nav-bar">
             <ul>
@@ -23,5 +23,90 @@
         </form>
         
     </header>
+</body>
+</html> -->
+
+
+<body>
+    <!-- header -->
+    <header id="header">
+        <img id="header-img" src="https://via.placeholder.com/150x50.png" alt="Company Logo">
+        <nav id="nav-bar">
+            <ul>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- main section -->
+    <main>
+        <!-- video section -->
+        <section id="video-section">
+            <h2>Watch our product video</h2>
+            <div class="video-container">
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Product Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+        
+        <!-- features section -->
+        <section id="features">
+            <h2>Features</h2>
+            <ul>
+                <li>Feature 1</li>
+                <li>Feature 2</li>
+                <li>Feature 3</li>
+                <li>Feature 4</li>
+            </ul>
+        </section>
+        
+        <!-- pricing section -->
+        <section id="pricing">
+            <h2>Pricing</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Plan</th>
+                        <th>Price</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Basic</td>
+                        <td>$9.99/month</td>
+                        <td>Feature 1, Feature 2</td>
+                    </tr>
+                    <tr>
+                        <td>Pro</td>
+                        <td>$19.99/month</td>
+                        <td>Feature 1, Feature 2, Feature 3</td>
+                    </tr>
+                    <tr>
+                        <td>Premium</td>
+                        <td>$29.99/month</td>
+                        <td>Feature 1, Feature 2, Feature 3, Feature 4</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        
+        <!-- contact section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <label for="email">Enter your email address:</label>
+                <input id="email" type="email" placeholder="example@domain.com" required name="email">
+                <input id="submit" type="submit" value="Submit">
+            </form>
+        </section>
+    </main>
+    
+    <!-- footer -->
+    <footer>
+        <p>&copy; 2023 Company Name. All rights reserved.</p>
+    </footer>
+    
 </body>
 </html>
