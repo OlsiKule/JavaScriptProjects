@@ -27,22 +27,22 @@ a {
 }
 
 #contact {
-    display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-height: 200px;
-margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 200px;
+  margin-top: 50px;
 }
 
 #form {
-        display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-width: 306px;
-height: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 306px;
+  height: 90px;
 }
 
 #email {
@@ -64,7 +64,6 @@ height: 90px;
     font-weight: 900;
     text-transform: uppercase;
     border-radius: 2px;
-    /* background: transparent; */
     cursor: pointer;
     background-color: #f1c40f;
 }
@@ -86,6 +85,8 @@ height: 90px;
 .grid {
   display: flex;
 }
+
+
 
 header {
     position: fixed;
