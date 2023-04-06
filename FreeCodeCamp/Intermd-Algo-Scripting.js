@@ -88,9 +88,7 @@ Passed: [1, "calf", 3, "piglet"], [7, "filly"] should return an array with six i
 function diffArray(arr1, arr2) {
 
   const longArr = [...arr1, ...arr2];
-  // console.log(longArr);
   const uniqueArr = longArr.filter((item, index) => longArr.indexOf(item) === index && longArr.lastIndexOf(item) === index);
-  // console.log(uniqueArr)
   return uniqueArr;
 }
 
@@ -134,4 +132,35 @@ function diffArray(arr1, arr2) {
   function diff(a, b) {
     return a.filter(item => b.indexOf(item) === -1);
   }
+}
+
+
+
+/* Seek and Destroy
+
+You will be provided with an initial array (the first argument in the destroyer function), followed by one or more arguments. Remove all elements from the initial array that are of the same value as these arguments.
+
+Note: You have to use the arguments object.
+Tests
+
+Passed: destroyer([1, 2, 3, 1, 2, 3], 2, 3) should return [1, 1].
+Passed: destroyer([1, 2, 3, 5, 1, 2, 3], 2, 3) should return [1, 5, 1].
+Passed: destroyer([3, 5, 1, 2, 2], 2, 3, 5) should return [1].
+Passed: destroyer([2, 3, 2, 3], 2, 3) should return [].
+Passed: destroyer(["tree", "hamburger", 53], "tree", 53) should return ["hamburger"].
+Passed: destroyer(["possum", "trollo", 12, "safari", "hotdog", 92, 65, "grandma", "bugati", "trojan", "yacht"], "yacht", "possum", "trollo", "safari", "hotdog", "grandma", "bugati", "trojan") should return [12,92,65]. */
+
+// didn't come up with this sln other than think of the main steps
+function destroyer(arr) {
+  for (let i = 1; i < arguments.length; i++) {
+    arr = arr.filter(item => item !== arguments[i]);
+  }
+  return arr;
+}
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+// alternatively with includes() fxn 
+function destroyer(arr, ...args) {
+  return arr.filter(item => !args.includes(item));
 }
