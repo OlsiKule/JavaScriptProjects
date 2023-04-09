@@ -190,5 +190,26 @@ function whatIsInAName(collection, source) {
     });
   }
   
-  
+
   whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" });
+
+  // suggested sln similar to the one above 
+  function whatIsInAName(collection, source) {
+
+    const sourceKeys = Object.keys(source);
+  
+    return collection
+      .filter(obj => sourceKeys
+                       .every(key => obj.hasOwnProperty(key) &&
+                              obj[key] === source[key]));
+  }
+  
+  // test here
+  whatIsInAName(
+    [
+      { first: "Romeo", last: "Montague" },
+      { first: "Mercutio", last: null },
+      { first: "Tybalt", last: "Capulet" }
+    ],
+    { last: "Capulet" }
+  );
