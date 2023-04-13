@@ -200,9 +200,9 @@ function whatIsInAName(collection, source) {
   
     return collection
       .filter(obj => sourceKeys
-      .every(key => obj.hasOwnProperty(key) &&
-            obj[key] === source[key]));
-  }
+                        .every(key => obj.hasOwnProperty(key) &&
+                        obj[key] === source[key]));
+        }
   
   // test here
   whatIsInAName(
